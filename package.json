@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng build --configuration production --aot",
+    "deploy": "ng build --configuration production --aot --base-href 'https://thaibucher.github.io/monHunTest/'",
     "test": "ng test"
   },
   "private": true,
