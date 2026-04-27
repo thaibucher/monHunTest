@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "monHunTest",
+            "baseHref": "/",
             "outputPath": "dist/monHunTest",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -98,15 +98,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "monHunTest",
   "cli": {
     "analytics": "b9f908e6-13b7-4ef5-9a7c-839277cff324"
   }
