@@ -45,7 +45,7 @@ export class MonstieTableComponent implements OnInit {
     ];
 
     const save2: string[] = ['Velocidrome', 'Kulu-Ya-Ku', 'Yian Kut-Ku', 'Bulldrome', 'Pukei-Pukei'];
-    this.monsties = this.initMonstiesStories3(save2)
+    this.monsties = this.initMonstiesStories2(save2)
       .sort((a, b) => (a.name > b.name ? -1 : 1))
       .sort((a, b) => (a.genus > b.genus ? -1 : 1));
 
