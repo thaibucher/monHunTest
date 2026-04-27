@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "monHunTest"
+  "defaultProject": "monHunTest",
+  "cli": {
+    "analytics": "b9f908e6-13b7-4ef5-9a7c-839277cff324"
+  }
 }
