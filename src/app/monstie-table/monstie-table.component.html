@@ -8,7 +8,23 @@
  -->
 <div class="monstie-table-container">
   <div class="header-bar">
-    <div class="clear-sticky" (click)="clearSticky()">Clear</div>
+    <div class="header-controls">
+      <div class="clear-sticky" (click)="clearSticky()">Clear</div>
+      <div class="status-checkboxes">
+        <label class="checkbox-label">
+          <input type="checkbox" [(ngModel)]="showOwned" (ngModelChange)="onFilterChange()" />
+          <span>Owned</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" [(ngModel)]="showSeen" (ngModelChange)="onFilterChange()" />
+          <span>Seen</span>
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" [(ngModel)]="showUnknown" (ngModelChange)="onFilterChange()" />
+          <span>Unknown</span>
+        </label>
+      </div>
+    </div>
     <div *ngIf="stickyMonstie" class="sticky-details-container">
       <div class="sticky-name">{{ stickyMonstie.name }}</div>
       <div class="sticky-type-icons">
@@ -63,7 +79,7 @@
   </div>
   <div class="monstie-table">
     <ng-container *ngFor="let monstie of monsties">
-      <div *ngIf="canDisplay(monstie)" class="monstie-cell-container">
+      <div *ngIf="monstie.canDisplay" class="monstie-cell-container">
         <div
           class="monstie-cell"
           [style.border-color]="getMonstieBorderStyle(monstie.genus)"

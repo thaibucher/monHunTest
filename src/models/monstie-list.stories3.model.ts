@@ -222,7 +222,7 @@ export const stories3Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.NON],
     star: 2,
-    location: 'Sunpetal Plains, Blightstone Woods',
+    location: [Stories3Location.SUNPETAL_PLAINS, Stories3Location.BLIGHTSTONE_WOODS],
     skills: ['Fly', 'Breath'],
     stats: {
       Health: 5,
@@ -259,8 +259,34 @@ export const stories3Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.NON],
     star: 3,
-    location: 'Broadleaf Basin',
-    skills: ['Fly', 'Breath']
+    location: [Stories3Location.BROADLEAF_BASIN],
+    skills: ['Fly', 'Breath'],
+    stats: {
+      Health: 5,
+      Attack: 5,
+      Speed: 5,
+      Defense: 4,
+      Crit: 0,
+      StaminaBase: 0,
+      StaminaRegen: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.INEFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.NEUTRAL
+    }
   },
   {
     name: Stories3MonstieName.AKNOSOM,
@@ -931,11 +957,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.RATHIAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/42/MHST3-Rathian_Icon.png',
     type: MonstieType.SPEED,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 4,
-    location: 'Endangered Den (Sunpetal Plains)',
-    skills: ['Fly', 'Breath']
+    location: [Stories3Location.SUNPETAL_PLAINS],
+    skills: ['Fly', 'Breath'],
+    stats: {
+      Health: 5,
+      Attack: 6,
+      Crit: 1,
+      Speed: 7,
+      Defense: 6,
+      StaminaRegen: 10,
+      StaminaBase: 4
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.NEUTRAL,
+      [MonstieElement.THUNDER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.VERY_EFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.PINK_RATHIAN,

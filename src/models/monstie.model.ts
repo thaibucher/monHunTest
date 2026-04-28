@@ -17,6 +17,7 @@ export interface Monstie {
   elementRes?: MonstieElementRes;
   stats?: MonstieStatTrends;
   location?: string | Array<string | Stories3Location>;
+  canDisplay?: boolean;
 }
 
 export enum MonstieStatus {
