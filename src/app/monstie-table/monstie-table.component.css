@@ -1,6 +1,10 @@
-.monstie-row {
-  align-items: flex-end;
+.monstie-table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
+
 .monstie-cell {
   border: 1px solid black;
   padding-top: 5px;
@@ -15,13 +19,13 @@
   line-height: 14px;
 }
 
-.monstie-egg {
+.monstie-icon {
   height: 75px;
   max-width: 100%;
 }
 
 .hover {
-  color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -31,6 +35,16 @@
   padding: 0px;
   height: 25px;
   display: inline-block;
+  border-radius: 50%;
+}
+
+.type-icon-medium {
+  width: 35px;
+  height: 35px;
+}
+
+.type-icon-enraged{
+  border: 3px solid red;
 }
 
 .monstie-info {
@@ -45,7 +59,7 @@
 }
 
 .monstie-cell-container {
-
+  width: 10%;
   padding: 0px;
   border: 1px solid;
   border-color: black;
@@ -69,5 +83,106 @@
 }
 
 .header-bar {
-  height: 53px;
+  background-color: #EFEBE4;
+  height: 60px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.clear-sticky {
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 5px;
+  border-radius: 5px;
+  height: 100%;
+}
+
+.sticky-details-container {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.sticky-name {
+  width: 155px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.sticky-ele-res {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ele-res-table {
+  border-collapse: collapse;
+  height: 100%;
+}
+
+.ele-res-table th,
+.ele-res-table td {
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  text-align: center;
+}
+
+.ele-icon,
+.strength-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+.sticky-ailment-res {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.ailment-res-table {
+  border-collapse: collapse;
+  height: 100%;
+}
+
+.ailment-res-table th,
+.ailment-res-table td {
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  text-align: center;
+}
+
+.ailment-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+@media (max-width: 1600px) {
+  .monstie-cell-container {
+    width: 20%;
+  }
+}
+
+@media (max-width: 957px) {
+  .monstie-cell-container {
+    width: 25%;
+  }
+}
+
+@media (max-width: 500px) {
+  .monstie-cell-container {
+    width: 50%;
+  }
 }

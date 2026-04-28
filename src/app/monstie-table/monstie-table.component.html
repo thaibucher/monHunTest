@@ -7,38 +7,84 @@
 </div>
  -->
 <div class="monstie-table-container">
-  <div class="d-none header-bar row">
-    <div class="header-option col-6">Test 1</div>
-        <div class="header-option col-6">Test 2</div>
-
+  <div class="header-bar">
+    <div class="clear-sticky" (click)="clearSticky()">Clear</div>
+    <div *ngIf="stickyMonstie" class="sticky-details-container">
+      <div class="sticky-name">{{ stickyMonstie.name }}</div>
+      <div class="sticky-type-icons">
+        <img [src]="monstieTypeIconMap[stickyMonstie.type]" class="type-icon type-icon-medium" />
+        <img
+          *ngIf="stickyMonstie?.enragedType"
+          [src]="monstieTypeIconMap[stickyMonstie.enragedType || MonstieType.UNKNOWN]"
+          class="type-icon type-icon-medium type-icon-enraged"
+        />
+      </div>
+      <div class="sticky-ele-res">
+        <table class="ele-res-table">
+          <thead>
+            <tr>
+              <th *ngFor="let ele of elementList">
+                <img [src]="monstieElementIconMap[ele]" class="ele-icon" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor="let ele of elementList">
+                <ng-container *ngIf="stickyMonstie?.elementRes?.[ele] as strength">
+                  <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="sticky-ailment-res">
+        <table class="ailment-res-table">
+          <thead>
+            <tr>
+              <th *ngFor="let ailment of ailmentList">
+                <img [src]="monstieAilmentIconMap[ailment]" class="ailment-icon" />
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor="let ailment of ailmentList">
+                <ng-container *ngIf="stickyMonstie?.ailmentRes?.[ailment] as strength">
+                  <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="monstie-table">
-    <div class="row">
-      <ng-container *ngFor="let monstie of monsties">
-        <div *ngIf="monstie.number && monstie.owned" class="monstie-cell-container col-xs-12 col-sm-6 col-md-2 col-lg-1">
-          <div
-            class="monstie-cell"
-            [style.border-color]="getMonstieBorderStyle(monstie.genus)"
-            (mouseover)="setHover(monstie.genus)"
-            (mouseleave)="removeHover(monstie.genus)"
-            [ngClass]="{
-              hover: currentHover === monstie.genus,
-              owned: monstie.owned
-            }"
-          >
-            <div class="monstie-info">
-              <img class="type-icon" [src]="monstieTypeIconMap[monstie.type]" />
-              <div class="monstie-name">{{ monstie.name }}</div>
-              <div class="monstie-star">
-                ★{{ monstie.star ?? '?' }}
-              </div>
-            </div>
-            <div class="egg-container">
-              <img class="monstie-egg" [src]="monstie.eggUrl" />
-            </div>
+    <ng-container *ngFor="let monstie of monsties">
+      <div *ngIf="canDisplay(monstie)" class="monstie-cell-container">
+        <div
+          class="monstie-cell"
+          [style.border-color]="getMonstieBorderStyle(monstie.genus)"
+          (mouseover)="setHover(monstie)"
+          (mouseleave)="removeHover(monstie)"
+          (click)="setStickyMonstie(monstie)"
+          [ngClass]="{
+            hover: currentHover === monstie.genus,
+            owned: monstie.status == MonstieStatus.OWNED
+          }"
+        >
+          <div class="monstie-info">
+            <img class="type-icon" [src]="monstieTypeIconMap[monstie.type]" />
+            <div class="monstie-name">{{ monstie.name }}</div>
+            <div class="monstie-star">★{{ monstie.star ?? '?' }}</div>
+          </div>
+          <div class="icon-container">
+            <img class="monstie-icon" [src]="monstie.iconUrl" />
           </div>
         </div>
-      </ng-container>
-    </div>
+      </div>
+    </ng-container>
   </div>
 </div>
