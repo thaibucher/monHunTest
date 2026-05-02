@@ -33,6 +33,7 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.DEVILJHO]: MonstieStatus.SEEN,
   [Stories3MonstieName.AKNOSOM]: MonstieStatus.OWNED,
   [Stories3MonstieName.BISHATEN]: MonstieStatus.SEEN,
+  [Stories3MonstieName.CANYNE]: MonstieStatus.SEEN
 };
 
 const stories2save1: string[] = [

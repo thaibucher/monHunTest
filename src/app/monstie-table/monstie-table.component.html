@@ -12,17 +12,30 @@
       <div class="clear-sticky" (click)="clearSticky()">Clear</div>
       <div class="status-checkboxes">
         <label class="checkbox-label">
-          <input type="checkbox" [(ngModel)]="showOwned" (ngModelChange)="onFilterChange()" />
+          <input type="checkbox" [formControl]="showOwnedControl" />
           <span>Owned</span>
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" [(ngModel)]="showSeen" (ngModelChange)="onFilterChange()" />
+          <input type="checkbox" [formControl]="showSeenControl" />
           <span>Seen</span>
         </label>
         <label class="checkbox-label">
-          <input type="checkbox" [(ngModel)]="showUnknown" (ngModelChange)="onFilterChange()" />
+          <input type="checkbox" [formControl]="showUnknownControl" />
           <span>Unknown</span>
         </label>
+      </div>
+      <div class="spoiler-checkboxes">
+        <label class="checkbox-label">
+          <input type="checkbox" [formControl]="showSpoilersControl" />
+          <span>Show Spoilers</span>
+        </label>
+      </div>
+      <div class="filter-control">
+        <input
+          type="text"
+          placeholder="Search monsties..."
+          [formControl]="searchTermControl"
+        />
       </div>
     </div>
     <div *ngIf="stickyMonstie" class="sticky-details-container">
@@ -112,11 +125,11 @@
         >
           <div class="monstie-info top-info">
             <img class="type-icon type-icon-small" [src]="monstieTypeIconMap[monstie.type]" />
-            <div class="monstie-name">{{ monstie.name }}</div>
+            <div class="monstie-name">{{ monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? '???' : monstie.name }}</div>
             <div class="monstie-star">★{{ monstie.star ?? '?' }}</div>
           </div>
           <div class="icon-container">
-            <img class="monstie-icon" [src]="monstie.iconUrl" />
+            <img class="monstie-icon" [src]="monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? 'assets/unknown.png' : monstie.iconUrl" />
           </div>
           <div class="monstie-info bottom-info">
             <img

@@ -319,10 +319,11 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.AKNOSOM,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/25/MHST3-Aknosom_Icon.png',
     type: MonstieType.TECH,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 3,
-    location: 'Mt. Canalta, Howlinyowl Forest',
+    location: [Stories3Location.CANALTA, Stories3Location.HOWLINYOWL_FOREST],
     skills: ['Fly', 'Breath']
   },
   {

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import {
   monstieAilmentIconMap,
   monstieElementIconMap,
@@ -16,7 +18,9 @@ import { MonstieService } from 'src/monstie.service';
   templateUrl: './monstie-table.component.html',
   styleUrls: ['./monstie-table.component.css']
 })
-export class MonstieTableComponent implements OnInit {
+export class MonstieTableComponent implements OnInit, OnDestroy {
+  private subscriptions: Subscription = new Subscription();
+
   constructor(private readonly monstieService: MonstieService) {}
   MonstieStatus = MonstieStatus;
   MonstieElement = MonstieElement;
@@ -25,12 +29,38 @@ export class MonstieTableComponent implements OnInit {
 
   allMonsties: Monstie[] = [];
   monsties: Monstie[] = [];
+  monstiesFromSave: Monstie[] = [];
+  sortedMonsties: Monstie[] = [];
+  filteredMonsties: Monstie[] = [];
   currentHover: MonstieGenus | null = null;
-  showOwned: boolean = true;
-  showSeen: boolean = true;
-  showUnknown: boolean = false;
-
+  filterForm = new FormGroup({
+    showOwned: new FormControl<boolean>(true),
+    showSeen: new FormControl<boolean>(true),
+    showUnknown: new FormControl<boolean>(false),
+    showSpoilers: new FormControl<boolean>(false),
+    searchTerm: new FormControl<string>('')
+  });
   stickyMonstie: Monstie | null = null;
+
+  get showOwnedControl(): FormControl<boolean> {
+    return this.filterForm.get('showOwned') as FormControl<boolean>;
+  }
+
+  get showSeenControl(): FormControl<boolean> {
+    return this.filterForm.get('showSeen') as FormControl<boolean>;
+  }
+
+  get showUnknownControl(): FormControl<boolean> {
+    return this.filterForm.get('showUnknown') as FormControl<boolean>;
+  }
+
+  get showSpoilersControl(): FormControl<boolean> {
+    return this.filterForm.get('showSpoilers') as FormControl<boolean>;
+  }
+
+  get searchTermControl(): FormControl<string> {
+    return this.filterForm.get('searchTerm') as FormControl<string>;
+  }
 
   elementList: MonstieElement[] = Object.values(MonstieElement);
   ailmentList: MonstieAilment[] = Object.values(MonstieAilment);
@@ -43,27 +73,50 @@ export class MonstieTableComponent implements OnInit {
   monstieStrengthIconMap = monstieStrengthIconMap;
 
   ngOnInit(): void {
-    const monstiesFromSave: Monstie[] = this.monstieService.getStories3Monsties(stories3save1);
+    this.monstiesFromSave = this.monstieService.getStories3Monsties(stories3save1);
     // this.allMonsties = defaultMonsties;
-    this.setTableMonsties(monstiesFromSave);
 
-    // TODO: Or have the header show the information for the hover/sticky target
-    // TODO: Move all this init into stuff that can be called there
-    // TODO: Allow save editing, so need a way of adding monsties without spoilers, and saving/editing that in session storage, save data in the code would be default
-    // TODO: Add toggles in the header to show/hide owned, unowned, or all monsties
-    // TODO: Add element display for MHS3, probably by refactoring the type section to be a vertical stack
-    // TODO: Replace static background color with border color, make duller when unowned vs owned, probably static for unknown when those are shown
-    // col-xs-12 col-sm-6 col-md-2 col-lg-1"
+    // Set up subscription for reactive updates
+    this.subscriptions.add(this.filterForm.valueChanges.subscribe(() => this.updateMonsties()));
+
+    this.updateMonsties();
   }
 
-  setTableMonsties(monsties: Monstie[]): void {
-    this.monsties = this.updateDisplay(monsties)
-      .sort((a, b) => ((a.star ?? 0) > (b.star ?? 0) ? -1 : 1))
-      .sort((a, b) => (a.genus > b.genus ? -1 : 1));
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
 
-  onFilterChange(): void {
-    this.setTableMonsties(this.monsties);
+  updateMonsties(): void {
+    const formValue = this.filterForm.value;
+    const searchTerm: string = formValue.searchTerm || '';
+    const showOwned: boolean = formValue.showOwned ?? true;
+    const showSeen: boolean = formValue.showSeen ?? true;
+    const showUnknown: boolean = formValue.showUnknown ?? false;
+
+    // Filter by search term
+    const filteredMonsties: Monstie[] = this.monstiesFromSave.filter((monstie: Monstie): boolean => {
+      const nameMatches: boolean = monstie.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const genusMatches: boolean = monstie.genus.toLowerCase().includes(searchTerm.toLowerCase());
+      const typeMatches: boolean = monstie.type.toLowerCase().includes(searchTerm.toLowerCase());
+      const elementMatches: boolean = monstie.elements.some((element: string): boolean =>
+        element.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      return nameMatches || genusMatches || typeMatches || elementMatches;
+    });
+
+    // Sort the filtered list
+    this.monsties = this.sortTableMonsties(filteredMonsties, showOwned, showSeen, showUnknown);
+  }
+
+  sortTableMonsties(monsties: Monstie[], showOwned: boolean, showSeen: boolean, showUnknown: boolean): Monstie[] {
+    return this.updateCanDisplay(monsties, showOwned, showSeen, showUnknown).sort((a: Monstie, b: Monstie): number => {
+      // Sort by genus first
+      if (a.genus !== b.genus) {
+        return a.genus > b.genus ? -1 : 1;
+      }
+      // Then by star (high to low)
+      return (b.star ?? 0) - (a.star ?? 0);
+    });
   }
 
   setHover(monstie: Monstie): void {
@@ -86,62 +139,24 @@ export class MonstieTableComponent implements OnInit {
     this.stickyMonstie = null;
   }
 
-  getMonstieBorderStyle(genus: MonstieGenus): any {
-    // console.log('getBorderStyle', genus);
-
-    let color = '';
-    if (genus === MonstieGenus.AMPHIBIAN) {
-      color = 'red';
-    }
-    if (genus === MonstieGenus.BIRD_WYVERN) {
-      color = 'blue';
-    }
-    if (genus === MonstieGenus.BRUTE_WYVERN) {
-      color = 'green';
-    }
-    if (genus === MonstieGenus.FANGED_BEAST) {
-      color = 'yellow';
-    }
-    if (genus === MonstieGenus.FANGED_WYVERN) {
-      color = 'purple';
-    }
-    if (genus === MonstieGenus.FLYING_WYVERN) {
-      color = 'orange';
-    }
-    if (genus === MonstieGenus.HERBIVORE) {
-      color = 'brown';
-    }
-    if (genus === MonstieGenus.LEVIATHAN) {
-      color = 'white';
-    }
-    if (genus === MonstieGenus.PISCINE_WYVERN) {
-      color = 'teal';
-    }
-    if (genus === MonstieGenus.TEMNOCERAN) {
-      color = 'aliceBlue';
-    }
-    if (genus === MonstieGenus.UNKNOWN) {
-      color = 'black';
-    }
-    return color;
-  }
-
-  updateDisplay(monsties: Monstie[]): Monstie[] {
-    let ret = monsties.map(monstie => ({ ...monstie, canDisplay: this.canDisplay(monstie) }));
+  updateCanDisplay(monsties: Monstie[], showOwned: boolean, showSeen: boolean, showUnknown: boolean): Monstie[] {
+    let ret: Monstie[] = monsties.map(
+      (monstie: Monstie): Monstie => ({ ...monstie, canDisplay: this.canDisplay(monstie, showOwned, showSeen, showUnknown) })
+    );
     // console.log(ret.map(m => ({ name: m.name, canDisplay: m.canDisplay })));
     return ret;
   }
 
-  canDisplay(monstie: Monstie): boolean {
+  canDisplay(monstie: Monstie, showOwned: boolean, showSeen: boolean, showUnknown: boolean): boolean {
     // console.log('canDisplay', monstie);
 
     if (monstie.genus === MonstieGenus.NON_CAPTURABLE) {
       return true;
     } else {
       return (
-        (monstie.status === MonstieStatus.OWNED && this.showOwned) ||
-        (monstie.status === MonstieStatus.SEEN && this.showSeen) ||
-        (monstie.status === MonstieStatus.UNKNOWN && this.showUnknown)
+        (monstie.status === MonstieStatus.OWNED && showOwned) ||
+        (monstie.status === MonstieStatus.SEEN && showSeen) ||
+        (monstie.status === MonstieStatus.UNKNOWN && showUnknown)
       );
     }
     return false;

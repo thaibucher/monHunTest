@@ -55,15 +55,11 @@ export const monstieGenusColorMap: Record<MonstieGenus, string> = {
 function dullerHex(hex: string, lum: number = 0): string {
   const cleanHex: string = hex.replace(/[^0-9a-f]/gi, '');
   let rgb: string = '#';
-  console.log('-----------')
-  console.log(cleanHex);
   for (let i: number = 0; i < 3; i++) {
     const channelValue: number = parseInt(cleanHex.slice(i * 2, i * 2 + 2), 16);
     const adjusted: number = Math.round(Math.min(Math.max(0, channelValue + channelValue * lum), 255));
-    console.log(channelValue, adjusted);
     rgb += adjusted.toString(16).padStart(2, '0');
   }
-  console.log(rgb);
   return rgb;
 }
 
