@@ -126,10 +126,37 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.GREAT_IZUCHI,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/24/MHST3-Great_Izuchi_Icon.png',
     type: MonstieType.SPEED,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.NON],
     star: 1,
-    location: 'Howlinyowl Forest, Blessing Hill'
+    location: [Stories3Location.HOWLINYOWL_FOREST, Stories3Location.BLESSING_HILL],
+    stats: {
+      Health: 3,
+      Attack: 5,
+      Crit: 0,
+      Speed: 7,
+      Defense: 3,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.WATER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.VERY_INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.KULU_YA_KU,
@@ -302,11 +329,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.PUKEI_PUKEI,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/6/65/MHST3-Pukei-Pukei_Icon.png',
     type: MonstieType.TECH,
+    enragedType: MonstieType.SPEED,
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.NON],
     star: 3,
-    location: 'Cataracts, Howlinyowl Forest',
-    skills: ['Fly', 'Breath']
+    location: [Stories3Location.CATARACTS, Stories3Location.HOWLINYOWL_FOREST],
+    skills: ['Fly', 'Breath'],
+    stats: {
+      Health: 5,
+      Attack: 4,
+      Crit: 0,
+      Speed: 6,
+      Defense: 5,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.WATER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.YIAN_GARUGA,
@@ -315,8 +369,34 @@ export const stories3Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 4,
-    location: 'Mt. Canalta, Howlinyowl Forest',
-    skills: ['Fly', 'Breath']
+    location: [Stories3Location.CANALTA, Stories3Location.HOWLINYOWL_FOREST],
+    skills: ['Fly', 'Breath'],
+    stats: {
+      Health: 0,
+      Attack: 0,
+      Crit: 0,
+      Speed: 0,
+      Defense: 0,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.SLEEP]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.BOMB]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.BLEED]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.BLIND]: MonstieStrength.NEUTRAL
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.NEUTRAL,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.NEUTRAL
+    }
   },
   {
     name: Stories3MonstieName.DEADEYE_YIAN_GARUGA,
@@ -332,10 +412,37 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.ARZUROS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/b/b2/MHST3-Arzuros_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.TECH,
     genus: MonstieGenus.FANGED_BEAST,
     elements: [MonstieElement.NON],
     star: 2,
-    location: 'Cataracts, Blessing Hill'
+    location: [Stories3Location.CATARACTS, Stories3Location.BLESSING_HILL],
+    stats: {
+      Health: 5,
+      Attack: 4,
+      Crit: 0,
+      Speed: 5,
+      Defense: 4,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.NEUTRAL,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.VERY_INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.BISHATEN,
@@ -447,11 +554,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.TETRANADON,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/7b/MHST3-Tetranadon_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.TECH,
     genus: MonstieGenus.AMPHIBIAN,
     elements: [MonstieElement.WATER],
     star: 3,
-    location: 'Cataracts, Frozen Grotto',
-    skills: ['Breath']
+    location: [Stories3Location.CATARACTS, Stories3Location.FROZEN_GROTTO],
+    skills: ['Breath'],
+    stats: {
+      Health: 7,
+      Attack: 7,
+      Crit: 0,
+      Speed: 4,
+      Defense: 3,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.SHOGUN_CEANATAUR,
@@ -543,11 +677,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.ANJANATH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/9a/MHST3-Anjanath_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.TECH,
     genus: MonstieGenus.BRUTE_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 4,
-    location: 'Broadleaf Basin',
-    skills: ['Breath']
+    location: [Stories3Location.BROADLEAF_BASIN],
+    skills: ['Breath'],
+    stats: {
+      Health: 6,
+      Attack: 7,
+      Speed: 5,
+      Defense: 4,
+      Crit: 0,
+      StaminaBase: 0,
+      StaminaRegen: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.NEUTRAL,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.FULGUR_ANJANATH,
@@ -713,21 +874,75 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.PURPLE_LUDROTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/b/b3/MHST3-Purple_Ludroth_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.TECH,
     genus: MonstieGenus.LEVIATHAN,
     elements: [MonstieElement.WATER],
     star: 3,
-    location: 'Cataracts, Blessing Hill',
-    skills: ['Swim', 'Breath']
+    location: [Stories3Location.CATARACTS, Stories3Location.BLESSING_HILL],
+    skills: ['Swim', 'Breath'],
+    stats: {
+      Health: 5,
+      Attack: 6,
+      Speed: 6,
+      Defense: 3,
+      Crit: 1,
+      StaminaBase: 4,
+      StaminaRegen: 10
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.SOMNACANTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0c/MHST3-Somnacanth_Icon.png',
     type: MonstieType.TECH,
+    enragedType: MonstieType.SPEED,
     genus: MonstieGenus.LEVIATHAN,
     elements: [MonstieElement.WATER],
     star: 4,
-    location: 'Cataracts, Frozen Grotto',
-    skills: ['Swim', 'Breath']
+    location: [Stories3Location.CATARACTS, Stories3Location.FROZEN_GROTTO],
+    skills: ['Swim', 'Breath'],
+    stats: {
+      Health: 6,
+      Attack: 5,
+      Speed: 7,
+      Defense: 5,
+      Crit: 1,
+      StaminaBase: 4,
+      StaminaRegen: 10
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.AURORA_SOMNACANTH,
@@ -890,11 +1105,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.MAGNAMALO,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/72/MHST3-Magnamalo_Icon.png',
     type: MonstieType.SPEED,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.FANGED_WYVERN,
     elements: [MonstieElement.NON],
     star: 6,
-    location: 'Old Capital Road',
-    skills: ['Wall Climb']
+    location: [Stories3Location.OLD_CAPITAL_ROAD],
+    skills: ['Wall Climb'],
+    stats: {
+      Health: 7,
+      Attack: 8,
+      Speed: 7,
+      Defense: 6,
+      Crit: 1,
+      StaminaBase: 4,
+      StaminaRegen: 10
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.INEFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.PAOLUMU,
@@ -994,11 +1236,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.PINK_RATHIAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/54/MHST3-Pink_Rathian_Icon.png',
     type: MonstieType.SPEED,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: ['Fly', 'Breath'],
+    stats: {
+      Health: 6,
+      Attack: 7,
+      Crit: 0,
+      Speed: 7,
+      Defense: 5,
+      StaminaRegen: 0,
+      StaminaBase: 0
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.VERY_EFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.DREADQUEEN_RATHIAN,

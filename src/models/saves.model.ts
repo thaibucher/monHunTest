@@ -1,4 +1,4 @@
-import { Stories3MonstieName } from './monstie-list.stories3.model';
+import { Stories3MonstieName, stories3Monsties } from './monstie-list.stories3.model';
 import { MonstieStatus } from './monstie.model';
 
 export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> = {
@@ -15,7 +15,19 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.PLESIOTH]: MonstieStatus.OWNED,
   [Stories3MonstieName.PURPLE_GYPCEROS]: MonstieStatus.OWNED,
   [Stories3MonstieName.CHATACABRA]: MonstieStatus.OWNED,
-  [Stories3MonstieName.RATHIAN]: MonstieStatus.OWNED
+  [Stories3MonstieName.RATHIAN]: MonstieStatus.OWNED,
+  [Stories3MonstieName.ANJANATH]: MonstieStatus.OWNED,
+  [Stories3MonstieName.PINK_RATHIAN]: MonstieStatus.OWNED,
+  [Stories3MonstieName.NAMIELLE]: MonstieStatus.SEEN,
+  [Stories3MonstieName.ESPINAS]: MonstieStatus.SEEN,
+  [Stories3MonstieName.MAGNAMALO]: MonstieStatus.SEEN,
+  [Stories3MonstieName.TETRANADON]: MonstieStatus.OWNED,
+  [Stories3MonstieName.SOMNACANTH]: MonstieStatus.SEEN,
+  [Stories3MonstieName.PURPLE_LUDROTH]: MonstieStatus.OWNED,
+  [Stories3MonstieName.PUKEI_PUKEI]: MonstieStatus.OWNED,
+  [Stories3MonstieName.GREAT_IZUCHI]: MonstieStatus.OWNED,
+  [Stories3MonstieName.ARZUROS]: MonstieStatus.OWNED,
+  [Stories3MonstieName.BRACHYDIOS]: MonstieStatus.SEEN,
 };
 
 const stories2save1: string[] = [

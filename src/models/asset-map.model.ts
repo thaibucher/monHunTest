@@ -1,10 +1,10 @@
-import { MonstieType, MonstieElement, MonstieAilment, MonstieStrength } from './monstie.model';
+import { MonstieType, MonstieElement, MonstieAilment, MonstieStrength, MonstieGenus } from './monstie.model';
 
 export const monstieTypeIconMap: Record<MonstieType, string> = {
   [MonstieType.POWER]: 'https://static.wikia.nocookie.net/monsterhunter/images/d/d3/MHST2-Power_Type.svg',
   [MonstieType.SPEED]: 'https://static.wikia.nocookie.net/monsterhunter/images/d/d9/MHST2-Speed_Type.svg',
   [MonstieType.TECH]: 'https://static.wikia.nocookie.net/monsterhunter/images/5/5b/MHST2-Technical_Type.svg',
-  [MonstieType.UNKNOWN]: 'assets/unknownType.png'
+  [MonstieType.UNKNOWN]: 'assets/unknown.png'
 };
 
 export const monstieElementIconMap: Record<MonstieElement, string> = {
@@ -32,4 +32,21 @@ export const monstieStrengthIconMap: Record<MonstieStrength, string> = {
   [MonstieStrength.NEUTRAL]: 'assets/Neutral.png',
   [MonstieStrength.EFFECTIVE]: 'assets/Effective.png',
   [MonstieStrength.VERY_EFFECTIVE]: 'assets/VeryEffective.png'
+};
+
+export const monstieGenusColorMap: Record<MonstieGenus, string> = {
+    [MonstieGenus.HERBIVORE]: '#A3D977',
+    [MonstieGenus.LEVIATHAN]: '#7DC4E4',
+    [MonstieGenus.AMPHIBIAN]: '#EFA86B',
+    [MonstieGenus.TEMNOCERAN]: '#DDA0DD',
+    [MonstieGenus.BIRD_WYVERN]: '#F5DEB3',
+    [MonstieGenus.FLYING_WYVERN]: '#ADD8E6',
+    [MonstieGenus.BRUTE_WYVERN]: '#90EE90',
+    [MonstieGenus.FANGED_BEAST]: '#FFFFE0',
+    [MonstieGenus.FANGED_WYVERN]: '#DDA0DD',
+    [MonstieGenus.PISCINE_WYVERN]: '#008080',
+    [MonstieGenus.CARAPACEON]: '#A52A2A',
+    [MonstieGenus.ELDER_DRAGON]: '#FFFFFF',
+    [MonstieGenus.NON_CAPTURABLE]: '',
+    [MonstieGenus.UNKNOWN]: ''
 };

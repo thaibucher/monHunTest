@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { monstieAilmentIconMap, monstieElementIconMap, monstieStrengthIconMap, monstieTypeIconMap } from 'src/models/asset-map.model';
+import { monstieAilmentIconMap, monstieElementIconMap, monstieGenusColorMap, monstieStrengthIconMap, monstieTypeIconMap } from 'src/models/asset-map.model';
 import { Monstie, MonstieAilment, MonstieElement, MonstieGenus, MonstieStatus, MonstieType } from 'src/models/monstie.model';
 import { stories3save1 } from 'src/models/saves.model';
 import { MonstieService } from 'src/monstie-service.service';
@@ -28,15 +28,16 @@ export class MonstieTableComponent implements OnInit {
   elementList: MonstieElement[] = Object.values(MonstieElement);
   ailmentList: MonstieAilment[] = Object.values(MonstieAilment);
 
+  monstieGenusColorMap = monstieGenusColorMap;
   monstieTypeIconMap = monstieTypeIconMap;
   monstieElementIconMap = monstieElementIconMap;
   monstieAilmentIconMap = monstieAilmentIconMap;
   monstieStrengthIconMap = monstieStrengthIconMap;
-
+  
   ngOnInit(): void {
-    const defaultMonsties: Monstie[] = this.monstieService.getStories3Monsties(stories3save1);
+    const monstiesFromSave: Monstie[] = this.monstieService.getStories3Monsties(stories3save1);
     // this.allMonsties = defaultMonsties;
-    this.setTableMonsties(defaultMonsties);
+    this.setTableMonsties(monstiesFromSave);
 
     // TODO: Or have the header show the information for the hover/sticky target
     // TODO: Move all this init into stuff that can be called there

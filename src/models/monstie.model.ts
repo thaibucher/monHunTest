@@ -12,7 +12,7 @@ export interface Monstie {
   number?: number;
   owned?: boolean;
   status?: MonstieStatus;
-  elements?: MonstieElement[];
+  elements: MonstieElement[];
   ailmentRes?: MonstieAilmentRes;
   elementRes?: MonstieElementRes;
   stats?: MonstieStatTrends;
@@ -117,4 +117,6 @@ export enum Stories3Location {
   MIRROR_LAKE = 'Mirror Lake',
   BROADLEAF_BASIN = 'Broadleaf Basin',
   BOUNTIFUL_DUNES = 'Bountiful Dunes',
+  CANALTA = 'Mt. Canalta',
+  OLD_CAPITAL_ROAD = 'Old Capital Road',
 }

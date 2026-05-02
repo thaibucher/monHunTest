@@ -82,7 +82,7 @@
       <div *ngIf="monstie.canDisplay" class="monstie-cell-container">
         <div
           class="monstie-cell"
-          [style.border-color]="getMonstieBorderStyle(monstie.genus)"
+          [style.border-color]="monstieGenusColorMap[monstie.genus]"
           (mouseover)="setHover(monstie)"
           (mouseleave)="removeHover(monstie)"
           (click)="setStickyMonstie(monstie)"
@@ -91,13 +91,16 @@
             owned: monstie.status == MonstieStatus.OWNED
           }"
         >
-          <div class="monstie-info">
-            <img class="type-icon" [src]="monstieTypeIconMap[monstie.type]" />
+          <div class="monstie-info top-info">
+            <img class="type-icon type-icon-small" [src]="monstieTypeIconMap[monstie.type]" />
             <div class="monstie-name">{{ monstie.name }}</div>
             <div class="monstie-star">★{{ monstie.star ?? '?' }}</div>
           </div>
           <div class="icon-container">
             <img class="monstie-icon" [src]="monstie.iconUrl" />
+          </div>
+          <div class="monstie-info bottom-info">
+            <img *ngIf="monstie.elements.length > 0" class="type-icon type-icon-small" [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]" />
           </div>
         </div>
       </div>

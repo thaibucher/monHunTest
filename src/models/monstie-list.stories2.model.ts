@@ -1,4 +1,4 @@
-import { MonstieType, MonstieGenus, Monstie } from './monstie.model';
+import { MonstieType, MonstieGenus, Monstie, MonstieElement } from './monstie.model';
 
 export enum Stories2MonstieNames {
   APTONOTH = 'Aptonoth',
@@ -98,7 +98,8 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.POWER,
     genus: MonstieGenus.HERBIVORE,
     star: 1,
-    number: 1
+    number: 1,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.VELOCIDROME,
@@ -107,7 +108,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     skills: ['Jump', 'Search'],
     star: 1,
-    number: 5
+    number: 5,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.KULU_YA_KU,
@@ -115,7 +117,8 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.TECH,
     genus: MonstieGenus.BIRD_WYVERN,
     star: 2,
-    number: 6
+    number: 6,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.YIAN_KUT_KU,
@@ -124,7 +127,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     number: 9,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BULLDROME,
@@ -133,7 +137,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     number: 11,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PUKEI_PUKEI,
@@ -142,7 +147,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
 
     number: 12,
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.APCEROS,
@@ -151,7 +157,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.HERBIVORE,
     number: 13,
 
-    star: 1
+    star: 1,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GREAT_JAGGI,
@@ -160,7 +167,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     number: 18,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ROYAL_LUDROTH,
@@ -169,7 +177,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.LEVIATHAN,
     number: 20,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ARZUROS,
@@ -178,7 +187,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     number: 22,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.QURUPECO,
@@ -187,7 +197,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     number: 23,
 
-    star: 2
+    star: 2,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BLUE_YIAN_KUT_KU,
@@ -196,7 +207,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     number: 24,
 
-    star: 3
+    star: 3,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PAOLUMU,
@@ -205,330 +217,332 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     number: 27,
 
-    star: 3
+    star: 3,
+        elements: [MonstieElement.NON]
   },
 
   {
     name: Stories2MonstieNames.YIAN_GARUGA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/d/d5/MHST2-Yian_Garuga_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GREAT_BAGGI,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/f/ff/MHST2-Great_Baggi_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GYPCEROS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0a/MHST2-Gypceros_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.IODROME,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/3/31/MHST2-Iodrome_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GENDROME,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/b/b7/MHST2-Gendrome_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PURPLE_GYPCEROS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/ef/MHST2-Purple_Gypceros_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.CRIMSON_QURUPECO,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/1/19/MHST2-Crimson_Qurupeco_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BIRD_WYVERN
-
+    genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_NORMAL,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/1/1a/MHST2-Palamute_Normal_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_FIRE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/73/MHST2-Palamute_Fire_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_WATER,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/81/MHST2-Palamute_Water_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_THUNDER,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/a2/MHST2-Palamute_Thunder_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_ICE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/46/MHST2-Palamute_Ice_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PALAMUTE_DRAGON,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/f/f2/MHST2-Palamute_Dragon_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.TIGREX,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/e0/MHST2-Tigrex_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.MONOBLOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/53/MHST2-Monoblos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
 
   {
     name: Stories2MonstieNames.BASARIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/5e/MHST2-Basarios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.NARGACUGA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/86/MHST2-Nargacuga_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RATHIAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/2e/MHST2-Rathian_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.POPO,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/1/1a/MHST2-Popo_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.HERBIVORE
-
+    genus: MonstieGenus.HERBIVORE,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.CONGALALA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/9d/MHST2-Congalala_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.KECHA_WACHA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/a2/MHST2-Kecha_Wacha_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ZAMTRIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/49/MHST2-Zamtrios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.AMPHIBIAN
-
+    genus: MonstieGenus.AMPHIBIAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.NERSCYLLA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8b/MHST2-Nerscylla_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.TEMNOCERAN
-
+    genus: MonstieGenus.TEMNOCERAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BARROTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0c/MHST2-Barroth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.TOBI_KADACHI,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/04/MHST2-Tobi-Kadachi_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_WYVERN
-
+    genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.KHEZU,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/73/MHST2-Khezu_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RED_KHEZU,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/a3/MHST2-Red_Khezu_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.LAGOMBI,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/6/6f/MHST2-Lagombi_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.JADE_BARROTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/50/MHST2-Jade_Barroth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ANJANATH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/d/d2/MHST2-Anjanath_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GAMMOTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/41/MHST2-Gammoth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ZINOGRE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/43/MHST2-Zinogre_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_WYVERN
-
+    genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BARIOTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0c/MHST2-Barioth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.LEGIANA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/6/62/MHST2-Legiana_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.CEPHADROME,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/a7/MHST2-Cephadrome_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.PISCINE_WYVERN
-
+    genus: MonstieGenus.PISCINE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ASH_KECHA_WACHA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/98/MHST2-Ash_Kecha_Wacha_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
+    genus: MonstieGenus.FANGED_BEAST,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -537,7 +551,8 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.GREEN_NARGACUGA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/48/MHST2-Green_Nargacuga_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
+    genus: MonstieGenus.FLYING_WYVERN,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -546,7 +561,8 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.DIABLOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/c/c2/MHST2-Diablos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
+    genus: MonstieGenus.FLYING_WYVERN,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -555,7 +571,8 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.BLACK_DIABLOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/80/MHST2-Black_Diablos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
+    genus: MonstieGenus.FLYING_WYVERN,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -564,7 +581,8 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.WHITE_MONOBLOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/03/MHST2-White_Monoblos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
+    genus: MonstieGenus.FLYING_WYVERN,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -573,7 +591,8 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.MIZUTSUNE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/72/MHST2-Mizutsune_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.LEVIATHAN
+    genus: MonstieGenus.LEVIATHAN,
+    elements: [MonstieElement.NON]
 
     // number: undefined,
     // star: undefined,
@@ -582,288 +601,294 @@ export const stories2Monsties: Monstie[] = [
     name: Stories2MonstieNames.LAGIACRUS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/7/7d/MHST2-Lagiacrus_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.LEVIATHAN
-
+    genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.URAGAAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/eb/MHST2-Uragaan_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BRUTE_TIGREX,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0f/MHST2-Brute_Tigrex_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PURPLE_LUDROTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0d/MHST2-Purple_Ludroth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.LEVIATHAN
-
+    genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RUBY_BASARIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/6/62/MHST2-Ruby_Basarios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GRAVIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/04/MHST2-Gravios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.SHROUDED_NERSCYLLA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/1/19/MHST2-Shrouded_Nerscylla_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.TEMNOCERAN
-
+    genus: MonstieGenus.TEMNOCERAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.EMERALD_CONGALALA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/89/MHST2-Emerald_Congalala_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_BEAST
-
+    genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BLACK_GRAVIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/f/f9/MHST2-Black_Gravios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.IVORY_LAGIACRUS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/f/fc/MHST2-Ivory_Lagiacrus_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.LEVIATHAN
-
+    genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BRACHYDIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/9b/MHST2-Brachydios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.NERGIGANTE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/ef/MHST2-Nergigante_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.ASTALOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/5d/MHST2-Astalos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GLAVENUS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/3/34/MHST2-Glavenus_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BAZELGEUSE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/1/1e/MHST2-Bazelgeuse_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.UNKNOWN
-
+    genus: MonstieGenus.UNKNOWN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.SAND_BARIOTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/ab/MHST2-Sand_Barioth_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.DEVILJHO,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8a/MHST2-Deviljho_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.UNKNOWN
-
+    genus: MonstieGenus.UNKNOWN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.STYGIAN_ZINOGRE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/d/d7/MHST2-Stygian_Zinogre_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_WYVERN
-
+    genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.SEREGIOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0a/MHST2-Seregios_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RATHALOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/0d/MHST2-Rathalos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.AZURE_RATHALOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/95/MHST2-Azure_Rathalos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.PINK_RATHIAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/0/05/MHST2-Pink_Rathian_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.FULGUR_ANJANATH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/e6/MHST2-Fulgur_Anjanath_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.BRUTE_WYVERN
-
+    genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.SILVERWIND_NARGACUGA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/c/c7/MHST2-Silverwind_Nargacuga_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.THUNDERLORD_ZINOGRE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/28/MHST2-Thunderlord_Zinogre_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FANGED_WYVERN
-
+    genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.BLOODBATH_DIABLOS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/c/cd/MHST2-Bloodbath_Diablos_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.GRIMCLAW_TIGREX,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8c/MHST2-Grimclaw_Tigrex_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.DREADQUEEN_RATHIAN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/91/MHST2-Dreadqueen_Rathian_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.KIRIN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/ea/MHST2-Kirin_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.TEOSTRA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/5f/MHST2-Teostra_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RAJANG,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/90/MHST2-Rajang_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.KUSHALA_DAORA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/2b/MHST2-Kushala_Daora_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.VELKHANA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8b/MHST2-Velkhana_Egg.svg',
     type: MonstieType.POWER,
-    genus: MonstieGenus.UNKNOWN
+    genus: MonstieGenus.UNKNOWN,
+        elements: [MonstieElement.NON]
   },
   {
     name: Stories2MonstieNames.RAZEWING_RATHA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/3/3b/MHST2-Razewing_Ratha_Egg.svg',
     type: MonstieType.UNKNOWN,
-    genus: MonstieGenus.FLYING_WYVERN
-
+    genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
+        elements: [MonstieElement.NON]
   }
 ];
