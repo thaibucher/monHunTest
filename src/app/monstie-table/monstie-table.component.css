@@ -7,7 +7,7 @@
 
 .monstie-cell {
   border: 1px solid black;
-  padding-top: 5px;
+  padding-top: 0px;
   padding-bottom: 0px;
   width: 100%;
   height: 100%;
@@ -68,10 +68,6 @@
   text-align: center;
 }
 
-.owned {
-  background-color: darkcyan;
-}
-
 .header-bar {
   background-color: #efebe4;
   height: 60px;
@@ -79,6 +75,8 @@
   display: flex;
   align-items: center;
   gap: 5px;
+  position: sticky;
+  top: 0px;
 }
 
 .clear-sticky {
@@ -101,13 +99,24 @@
   padding: 0 10px;
 }
 
-.sticky-name {
-  width: 155px;
+.sticky-basic-info {
+  min-width: 155px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid black;
+  flex-direction: column;
+}
+
+.basic-info-row {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.basic-info-row--spaced {
+  justify-content: space-between;
 }
 
 .sticky-ele-res {
@@ -124,7 +133,7 @@
 .ele-res-table th,
 .ele-res-table td {
   border: 1px solid #ccc;
-  padding: 2px 4px;
+  padding: 1px 4px;
   text-align: center;
 }
 

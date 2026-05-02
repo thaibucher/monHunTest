@@ -35,18 +35,42 @@ export const monstieStrengthIconMap: Record<MonstieStrength, string> = {
 };
 
 export const monstieGenusColorMap: Record<MonstieGenus, string> = {
-    [MonstieGenus.HERBIVORE]: '#A3D977',
-    [MonstieGenus.LEVIATHAN]: '#7DC4E4',
-    [MonstieGenus.AMPHIBIAN]: '#EFA86B',
-    [MonstieGenus.TEMNOCERAN]: '#DDA0DD',
-    [MonstieGenus.BIRD_WYVERN]: '#F5DEB3',
-    [MonstieGenus.FLYING_WYVERN]: '#ADD8E6',
-    [MonstieGenus.BRUTE_WYVERN]: '#90EE90',
-    [MonstieGenus.FANGED_BEAST]: '#FFFFE0',
-    [MonstieGenus.FANGED_WYVERN]: '#DDA0DD',
-    [MonstieGenus.PISCINE_WYVERN]: '#008080',
-    [MonstieGenus.CARAPACEON]: '#A52A2A',
-    [MonstieGenus.ELDER_DRAGON]: '#FFFFFF',
-    [MonstieGenus.NON_CAPTURABLE]: '',
-    [MonstieGenus.UNKNOWN]: ''
+  [MonstieGenus.HERBIVORE]: '#A3D977',
+  [MonstieGenus.LEVIATHAN]: '#7DC4E4',
+  [MonstieGenus.AMPHIBIAN]: '#EFA86B',
+  [MonstieGenus.TEMNOCERAN]: '#DDA0DD',
+  [MonstieGenus.BIRD_WYVERN]: '#F5DEB3',
+  [MonstieGenus.FLYING_WYVERN]: '#ADD8E6',
+  [MonstieGenus.BRUTE_WYVERN]: '#90EE90',
+  [MonstieGenus.FANGED_BEAST]: '#FFFFE0',
+  [MonstieGenus.FANGED_WYVERN]: '#DDA0DD',
+  [MonstieGenus.PISCINE_WYVERN]: '#008080',
+  [MonstieGenus.CARAPACEON]: '#A52A2A',
+  [MonstieGenus.ELDER_DRAGON]: '#FFFFFF',
+  [MonstieGenus.NON_CAPTURABLE]: '#FFFFFF',
+  [MonstieGenus.UNKNOWN]: '#FFFFFF'
 };
+
+
+function dullerHex(hex: string, lum: number = 0): string {
+  const cleanHex: string = hex.replace(/[^0-9a-f]/gi, '');
+  let rgb: string = '#';
+  console.log('-----------')
+  console.log(cleanHex);
+  for (let i: number = 0; i < 3; i++) {
+    const channelValue: number = parseInt(cleanHex.slice(i * 2, i * 2 + 2), 16);
+    const adjusted: number = Math.round(Math.min(Math.max(0, channelValue + channelValue * lum), 255));
+    console.log(channelValue, adjusted);
+    rgb += adjusted.toString(16).padStart(2, '0');
+  }
+  console.log(rgb);
+  return rgb;
+}
+
+export const monstieGenusColorMapDull: Record<MonstieGenus, string> = Object.entries(monstieGenusColorMap).reduce(
+  (acc, [key, color]) => ({
+    ...acc,
+    [key as MonstieGenus]: dullerHex(color, -0.6)
+  }),
+  {} as Record<MonstieGenus, string>
+);

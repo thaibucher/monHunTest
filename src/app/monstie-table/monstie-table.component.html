@@ -26,7 +26,18 @@
       </div>
     </div>
     <div *ngIf="stickyMonstie" class="sticky-details-container">
-      <div class="sticky-name">{{ stickyMonstie.name }}</div>
+      <div class="sticky-basic-info">
+        <div class="basic-info-row basic-info-row--spaced">
+          <img
+            *ngIf="stickyMonstie.elements.length > 0"
+            class="type-icon type-icon-small"
+            [src]="monstieElementIconMap[stickyMonstie.elements[0] || MonstieElement.NON]"
+          />
+          {{ stickyMonstie.genus }}
+          <div class="monstie-star">★{{ stickyMonstie.star ?? '?' }}</div>
+        </div>
+        <div class="basic-info-row">{{ stickyMonstie.name }}</div>
+      </div>
       <div class="sticky-type-icons">
         <img [src]="monstieTypeIconMap[stickyMonstie.type]" class="type-icon type-icon-medium" />
         <img
@@ -50,6 +61,9 @@
                 <ng-container *ngIf="stickyMonstie?.elementRes?.[ele] as strength">
                   <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
                 </ng-container>
+                <ng-container *ngIf="!stickyMonstie?.elementRes?.[ele] as strength">
+                  <img src="assets/unknown.png" class="strength-icon" />
+                </ng-container>
               </td>
             </tr>
           </tbody>
@@ -70,6 +84,9 @@
                 <ng-container *ngIf="stickyMonstie?.ailmentRes?.[ailment] as strength">
                   <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
                 </ng-container>
+                <ng-container *ngIf="!stickyMonstie?.ailmentRes?.[ailment] as strength">
+                  <img src="assets/unknown.png" class="strength-icon" />
+                </ng-container>
               </td>
             </tr>
           </tbody>
@@ -83,12 +100,14 @@
         <div
           class="monstie-cell"
           [style.border-color]="monstieGenusColorMap[monstie.genus]"
+          [style.background-color]="getMonstieBackgroundColor(monstie)"
           (mouseover)="setHover(monstie)"
           (mouseleave)="removeHover(monstie)"
           (click)="setStickyMonstie(monstie)"
           [ngClass]="{
             hover: currentHover === monstie.genus,
-            owned: monstie.status == MonstieStatus.OWNED
+            owned: monstie.status === MonstieStatus.OWNED,
+            unowned: monstie.status !== MonstieStatus.OWNED
           }"
         >
           <div class="monstie-info top-info">
@@ -100,7 +119,11 @@
             <img class="monstie-icon" [src]="monstie.iconUrl" />
           </div>
           <div class="monstie-info bottom-info">
-            <img *ngIf="monstie.elements.length > 0" class="type-icon type-icon-small" [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]" />
+            <img
+              *ngIf="monstie.elements.length > 0"
+              class="type-icon type-icon-small"
+              [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]"
+            />
           </div>
         </div>
       </div>

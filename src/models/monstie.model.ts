@@ -29,10 +29,10 @@ export enum MonstieStatus {
 export enum MonstieElement {
   NON = 'Non-Elem',
   FIRE = 'Fire',
-  DRAGON = 'Dragon',
   WATER = 'Water',
   THUNDER = 'Thunder',
-  ICE = 'Ice'
+  ICE = 'Ice',
+  DRAGON = 'Dragon'
 }
 
 export enum MonstieAilment {
@@ -118,5 +118,5 @@ export enum Stories3Location {
   BROADLEAF_BASIN = 'Broadleaf Basin',
   BOUNTIFUL_DUNES = 'Bountiful Dunes',
   CANALTA = 'Mt. Canalta',
-  OLD_CAPITAL_ROAD = 'Old Capital Road',
+  OLD_CAPITAL_ROAD = 'Old Capital Road'
 }

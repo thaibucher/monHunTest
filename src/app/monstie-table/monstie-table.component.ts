@@ -1,8 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { monstieAilmentIconMap, monstieElementIconMap, monstieGenusColorMap, monstieStrengthIconMap, monstieTypeIconMap } from 'src/models/asset-map.model';
+import {
+  monstieAilmentIconMap,
+  monstieElementIconMap,
+  monstieGenusColorMap,
+  monstieGenusColorMapDull,
+  monstieStrengthIconMap,
+  monstieTypeIconMap
+} from 'src/models/asset-map.model';
 import { Monstie, MonstieAilment, MonstieElement, MonstieGenus, MonstieStatus, MonstieType } from 'src/models/monstie.model';
 import { stories3save1 } from 'src/models/saves.model';
-import { MonstieService } from 'src/monstie-service.service';
+import { MonstieService } from 'src/monstie.service';
 
 @Component({
   selector: 'app-monstie-table',
@@ -29,11 +36,12 @@ export class MonstieTableComponent implements OnInit {
   ailmentList: MonstieAilment[] = Object.values(MonstieAilment);
 
   monstieGenusColorMap = monstieGenusColorMap;
+  monstieGenusColorMapDull = monstieGenusColorMapDull;
   monstieTypeIconMap = monstieTypeIconMap;
   monstieElementIconMap = monstieElementIconMap;
   monstieAilmentIconMap = monstieAilmentIconMap;
   monstieStrengthIconMap = monstieStrengthIconMap;
-  
+
   ngOnInit(): void {
     const monstiesFromSave: Monstie[] = this.monstieService.getStories3Monsties(stories3save1);
     // this.allMonsties = defaultMonsties;
@@ -50,7 +58,7 @@ export class MonstieTableComponent implements OnInit {
 
   setTableMonsties(monsties: Monstie[]): void {
     this.monsties = this.updateDisplay(monsties)
-      .sort((a, b) => (a.name > b.name ? -1 : 1))
+      .sort((a, b) => ((a.star ?? 0) > (b.star ?? 0) ? -1 : 1))
       .sort((a, b) => (a.genus > b.genus ? -1 : 1));
   }
 
@@ -137,5 +145,10 @@ export class MonstieTableComponent implements OnInit {
       );
     }
     return false;
+  }
+
+  getMonstieBackgroundColor(monstie: Monstie): string {
+    const colorMap = monstie.status === MonstieStatus.OWNED ? this.monstieGenusColorMap : this.monstieGenusColorMapDull;
+    return colorMap[monstie.genus];
   }
 }

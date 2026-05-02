@@ -28,6 +28,11 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.GREAT_IZUCHI]: MonstieStatus.OWNED,
   [Stories3MonstieName.ARZUROS]: MonstieStatus.OWNED,
   [Stories3MonstieName.BRACHYDIOS]: MonstieStatus.SEEN,
+  [Stories3MonstieName.GARANGOLM]: MonstieStatus.OWNED,
+  [Stories3MonstieName.AURORA_SOMNACANTH]: MonstieStatus.OWNED,
+  [Stories3MonstieName.DEVILJHO]: MonstieStatus.SEEN,
+  [Stories3MonstieName.AKNOSOM]: MonstieStatus.OWNED,
+  [Stories3MonstieName.BISHATEN]: MonstieStatus.SEEN,
 };
 
 const stories2save1: string[] = [
