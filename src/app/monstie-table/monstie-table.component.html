@@ -26,115 +26,130 @@
         <input type="text" placeholder="Search monsties..." [formControl]="searchTermControl" />
       </div>
     </div>
-    <div *ngIf="stickyMonstie" class="sticky-details-container">
-      <div class="sticky-basic-info">
-        <div class="basic-info-row basic-info-row--spaced">
-          <img
-            *ngIf="stickyMonstie.elements.length > 0"
-            class="type-icon type-icon-small"
-            [src]="monstieElementIconMap[stickyMonstie.elements[0] || MonstieElement.NON]"
-          />
-          {{ stickyMonstie.genus }}
-          <div class="monstie-star">★{{ stickyMonstie.star === 0 ? '?' : stickyMonstie.star }}</div>
+    @if (stickyMonstie) {
+      <div class="sticky-details-container">
+        <div class="sticky-basic-info">
+          <div class="basic-info-row basic-info-row--spaced">
+            @if (stickyMonstie.elements.length > 0) {
+              <img
+                class="type-icon type-icon-small"
+                [src]="monstieElementIconMap[stickyMonstie.elements[0] || MonstieElement.NON]"
+                />
+            }
+            {{ stickyMonstie.genus }}
+            <div class="monstie-star">★{{ stickyMonstie.star === 0 ? '?' : stickyMonstie.star }}</div>
+          </div>
+          <div class="basic-info-row">{{ stickyMonstie.name }}</div>
         </div>
-        <div class="basic-info-row">{{ stickyMonstie.name }}</div>
+        <div class="sticky-type-icons">
+          <img [src]="monstieTypeIconMap[stickyMonstie.type]" class="type-icon type-icon-medium" />
+          @if (stickyMonstie?.enragedType) {
+            <img
+              [src]="monstieTypeIconMap[stickyMonstie.enragedType || MonstieType.UNKNOWN]"
+              class="type-icon type-icon-medium type-icon-enraged"
+              />
+          }
+        </div>
+        <div class="sticky-ele-res">
+          <table class="ele-res-table">
+            <thead>
+              <tr>
+                @for (ele of elementList; track ele) {
+                  <th>
+                    <img [src]="monstieElementIconMap[ele]" class="ele-icon" />
+                  </th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                @for (ele of elementList; track ele) {
+                  <td>
+                    @if (stickyMonstie?.elementRes?.[ele]; as strength) {
+                      <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
+                    }
+                    @if (!stickyMonstie?.elementRes?.[ele]; as strength) {
+                      <img src="assets/unknown.png" class="strength-icon" />
+                    }
+                  </td>
+                }
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="sticky-ailment-res">
+          <table class="ailment-res-table">
+            <thead>
+              <tr>
+                @for (ailment of ailmentList; track ailment) {
+                  <th>
+                    <img [src]="monstieAilmentIconMap[ailment]" class="ailment-icon" />
+                  </th>
+                }
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                @for (ailment of ailmentList; track ailment) {
+                  <td>
+                    @if (stickyMonstie?.ailmentRes?.[ailment]; as strength) {
+                      <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
+                    }
+                    @if (!stickyMonstie?.ailmentRes?.[ailment]; as strength) {
+                      <img src="assets/unknown.png" class="strength-icon" />
+                    }
+                  </td>
+                }
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="sticky-type-icons">
-        <img [src]="monstieTypeIconMap[stickyMonstie.type]" class="type-icon type-icon-medium" />
-        <img
-          *ngIf="stickyMonstie?.enragedType"
-          [src]="monstieTypeIconMap[stickyMonstie.enragedType || MonstieType.UNKNOWN]"
-          class="type-icon type-icon-medium type-icon-enraged"
-        />
-      </div>
-      <div class="sticky-ele-res">
-        <table class="ele-res-table">
-          <thead>
-            <tr>
-              <th *ngFor="let ele of elementList">
-                <img [src]="monstieElementIconMap[ele]" class="ele-icon" />
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td *ngFor="let ele of elementList">
-                <ng-container *ngIf="stickyMonstie?.elementRes?.[ele] as strength">
-                  <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
-                </ng-container>
-                <ng-container *ngIf="!stickyMonstie?.elementRes?.[ele] as strength">
-                  <img src="assets/unknown.png" class="strength-icon" />
-                </ng-container>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="sticky-ailment-res">
-        <table class="ailment-res-table">
-          <thead>
-            <tr>
-              <th *ngFor="let ailment of ailmentList">
-                <img [src]="monstieAilmentIconMap[ailment]" class="ailment-icon" />
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td *ngFor="let ailment of ailmentList">
-                <ng-container *ngIf="stickyMonstie?.ailmentRes?.[ailment] as strength">
-                  <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
-                </ng-container>
-                <ng-container *ngIf="!stickyMonstie?.ailmentRes?.[ailment] as strength">
-                  <img src="assets/unknown.png" class="strength-icon" />
-                </ng-container>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    }
     <!--     <div class="save-controls"><input type="text" placeholder="Search monsties..." [formControl]="searchTermControl" /></div>
- -->
+    -->
   </div>
   <div class="monstie-table">
-    <ng-container *ngFor="let monstie of monsties">
-      <div *ngIf="monstie.canDisplay" class="monstie-cell-container">
-        <div
-          class="monstie-cell"
-          [style.border-color]="monstieGenusColorMap[monstie.genus]"
-          [style.background-color]="getMonstieBackgroundColor(monstie)"
-          (mouseover)="setHover(monstie)"
-          (mouseleave)="removeHover(monstie)"
-          (click)="setStickyMonstie(monstie)"
+    @for (monstie of monsties; track monstie) {
+      @if (monstie.canDisplay) {
+        <div class="monstie-cell-container">
+          <div
+            class="monstie-cell"
+            [style.border-color]="monstieGenusColorMap[monstie.genus]"
+            [style.background-color]="getMonstieBackgroundColor(monstie)"
+            (mouseover)="setHover(monstie)"
+            (mouseleave)="removeHover(monstie)"
+            (click)="setStickyMonstie(monstie)"
           [ngClass]="{
             hover: currentHover === monstie.genus,
             owned: monstie.status === MonstieStatus.OWNED,
             unowned: monstie.status !== MonstieStatus.OWNED
           }"
-        >
-          <div class="monstie-info top-info">
-            <img class="type-icon type-icon-small" [src]="monstieTypeIconMap[monstie.type]" />
-            <div class="monstie-name">
-              {{ monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? '???' : monstie.name }}
+            >
+            <div class="monstie-info top-info">
+              <img class="type-icon type-icon-small" [src]="monstieTypeIconMap[monstie.type]" />
+              <div class="monstie-name">
+                {{ monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? '???' : monstie.name }}
+              </div>
+              <div class="monstie-star">★{{ monstie.star === 0 ? '?' : monstie.star }}</div>
             </div>
-            <div class="monstie-star">★{{ monstie.star === 0 ? '?' : monstie.star }}</div>
+            <div class="icon-container">
+              <img
+                class="monstie-icon"
+                [src]="monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? 'assets/unknown.png' : monstie.iconUrl"
+                />
+              </div>
+              <div class="monstie-info bottom-info">
+                @if (monstie.elements.length > 0) {
+                  <img
+                    class="type-icon type-icon-small"
+                    [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]"
+                    />
+                }
+              </div>
+            </div>
           </div>
-          <div class="icon-container">
-            <img
-              class="monstie-icon"
-              [src]="monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? 'assets/unknown.png' : monstie.iconUrl"
-            />
-          </div>
-          <div class="monstie-info bottom-info">
-            <img
-              *ngIf="monstie.elements.length > 0"
-              class="type-icon type-icon-small"
-              [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]"
-            />
-          </div>
-        </div>
-      </div>
-    </ng-container>
+        }
+      }
+    </div>
   </div>
-</div>
