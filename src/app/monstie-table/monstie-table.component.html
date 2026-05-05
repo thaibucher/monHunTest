@@ -31,10 +31,7 @@
         <div class="sticky-basic-info">
           <div class="basic-info-row basic-info-row--spaced">
             @if (stickyMonstie.elements.length > 0) {
-              <img
-                class="type-icon type-icon-small"
-                [src]="monstieElementIconMap[stickyMonstie.elements[0] || MonstieElement.NON]"
-                />
+              <img class="type-icon type-icon-small" [src]="monstieElementIconMap[stickyMonstie.elements[0] || MonstieElement.NON]" />
             }
             {{ stickyMonstie.genus }}
             <div class="monstie-star">★{{ stickyMonstie.star === 0 ? '?' : stickyMonstie.star }}</div>
@@ -47,7 +44,7 @@
             <img
               [src]="monstieTypeIconMap[stickyMonstie.enragedType || MonstieType.UNKNOWN]"
               class="type-icon type-icon-medium type-icon-enraged"
-              />
+            />
           }
         </div>
         <div class="sticky-ele-res">
@@ -120,15 +117,15 @@
             (mouseover)="setHover(monstie)"
             (mouseleave)="removeHover(monstie)"
             (click)="setStickyMonstie(monstie)"
-          [ngClass]="{
-            hover: currentHover === monstie.genus,
-            owned: monstie.status === MonstieStatus.OWNED,
-            unowned: monstie.status !== MonstieStatus.OWNED
-          }"
-            >
+            [ngClass]="{
+              hover: currentHover === monstie.genus,
+              owned: monstie.status === MonstieStatus.OWNED,
+              unowned: monstie.status !== MonstieStatus.OWNED
+            }"
+          >
             <div class="monstie-info top-info">
               <img class="type-icon type-icon-small" [src]="monstieTypeIconMap[monstie.type]" />
-              <div class="monstie-name">
+              <div class="monstie-name" [ngClass]="{unowned: monstie.status !== MonstieStatus.OWNED}">
                 {{ monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? '???' : monstie.name }}
               </div>
               <div class="monstie-star">★{{ monstie.star === 0 ? '?' : monstie.star }}</div>
@@ -137,19 +134,41 @@
               <img
                 class="monstie-icon"
                 [src]="monstie.status === MonstieStatus.UNKNOWN && !showSpoilersControl.value ? 'assets/unknown.png' : monstie.iconUrl"
-                />
-              </div>
-              <div class="monstie-info bottom-info">
-                @if (monstie.elements.length > 0) {
-                  <img
-                    class="type-icon type-icon-small"
-                    [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]"
-                    />
-                }
-              </div>
+              />
+            </div>
+            <div class="monstie-info bottom-info">
+              @if (monstie.elements.length > 0) {
+                <img class="type-icon type-icon-small" [src]="monstieElementIconMap[monstie.elements[0] || MonstieElement.NON]" />
+              }
             </div>
           </div>
-        }
+        </div>
       }
-    </div>
+    }
   </div>
+</div>
+
+<!-- The modal template -->
+<ng-template #introModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Mon Hun Stories 3 Monstie Dex</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+
+  <div class="modal-body">
+    <p>Welcome to the Monstie Dex!</p>
+    <p>This is a tool to assist in tracking monstie info in Monster Hunter Stories 3.</p>
+    <p>Monsties with a light background color and black text are owned.</p>
+    <p>Monsties with a dark background color and white text are unowned.</p>
+    <p>Click a Monstie to view its details in the header bar.</p>
+    <p>The search bar allows for searches where results match any term, separated by ,'s or |'s</p>
+    <p>If you instead separate terms by +'s or &'s, every term must match for results to show</p>
+    <p>The spoilers toggle will hide information about Monsties not marked as seen or owned. Warning: The header bar will currently show that information anyway if you click them.</p>
+    <hr>
+    <p>Currently you cannot edit your save file, the data you are seeing is just what I have hard coded into the application. Details I haven't found in game are also not yet available. Working on it tho</p>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+  </div>
+</ng-template>

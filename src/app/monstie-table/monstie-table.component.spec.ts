@@ -8,9 +8,8 @@ describe('MonstieTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MonstieTableComponent ]
-    })
-    .compileComponents();
+      imports: [MonstieTableComponent]
+    }).compileComponents();
   });
 
   beforeEach(() => {

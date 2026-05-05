@@ -1,5 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import {
   monstieAilmentIconMap,
@@ -12,6 +13,7 @@ import {
 import { Monstie, MonstieAilment, MonstieElement, MonstieGenus, MonstieStatus, MonstieType } from 'src/models/monstie.model';
 import { stories3save1 } from 'src/models/saves.model';
 import { MonstieService } from 'src/monstie.service';
+import { NgClass } from '@angular/common';
 
 export enum HeaderControlName {
   SHOW_OWNED = 'showOwned',
@@ -22,15 +24,20 @@ export enum HeaderControlName {
 }
 
 @Component({
-    selector: 'app-monstie-table',
-    templateUrl: './monstie-table.component.html',
-    styleUrls: ['./monstie-table.component.css'],
-    standalone: false
+  selector: 'app-monstie-table',
+  templateUrl: './monstie-table.component.html',
+  styleUrls: ['./monstie-table.component.css'],
+  imports: [FormsModule, ReactiveFormsModule, NgClass, NgbModule]
 })
-export class MonstieTableComponent implements OnInit, OnDestroy {
+export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
+  @ViewChild('introModal') introModal!: ElementRef;
+
   private subscriptions: Subscription = new Subscription();
 
-  constructor(private readonly monstieService: MonstieService) {}
+  constructor(
+    private readonly monstieService: MonstieService,
+    private readonly ngbModal: NgbModal
+  ) {}
   MonstieStatus = MonstieStatus;
   MonstieElement = MonstieElement;
   MonstieAilment = MonstieAilment;
@@ -83,9 +90,17 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.monstiesFromSave = this.monstieService.getStories3Monsties(stories3save1);
-    this.subscriptions.add(this.filterForm.valueChanges.subscribe(() => this.updateMonsties()));
+    this.subscriptions.add(this.filterForm.valueChanges.subscribe({ next: () => this.updateMonsties() }));
 
     this.updateMonsties();
+  }
+
+  ngAfterViewInit(): void {
+    this.ngbModal.open(this.introModal, {
+      centered: true,
+      backdrop: 'static',
+      keyboard: true
+    });
   }
 
   ngOnDestroy(): void {
