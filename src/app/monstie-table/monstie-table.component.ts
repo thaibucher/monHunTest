@@ -22,9 +22,10 @@ export enum HeaderControlName {
 }
 
 @Component({
-  selector: 'app-monstie-table',
-  templateUrl: './monstie-table.component.html',
-  styleUrls: ['./monstie-table.component.css']
+    selector: 'app-monstie-table',
+    templateUrl: './monstie-table.component.html',
+    styleUrls: ['./monstie-table.component.css'],
+    standalone: false
 })
 export class MonstieTableComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription = new Subscription();
