@@ -13,6 +13,14 @@ import { Monstie, MonstieAilment, MonstieElement, MonstieGenus, MonstieStatus, M
 import { stories3save1 } from 'src/models/saves.model';
 import { MonstieService } from 'src/monstie.service';
 
+export enum HeaderControlName {
+  SHOW_OWNED = 'showOwned',
+  SHOW_SEEN = 'showSeen',
+  SHOW_UNKNOWN = 'showUnknown',
+  SHOW_SPOILERS = 'showSpoilers',
+  SEARCH_TERM = 'searchTerm'
+}
+
 @Component({
   selector: 'app-monstie-table',
   templateUrl: './monstie-table.component.html',
@@ -34,32 +42,32 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
   filteredMonsties: Monstie[] = [];
   currentHover: MonstieGenus | null = null;
   filterForm = new FormGroup({
-    showOwned: new FormControl<boolean>(true),
-    showSeen: new FormControl<boolean>(true),
-    showUnknown: new FormControl<boolean>(false),
-    showSpoilers: new FormControl<boolean>(false),
-    searchTerm: new FormControl<string>('')
+    [HeaderControlName.SHOW_OWNED]: new FormControl<boolean>(true),
+    [HeaderControlName.SHOW_SEEN]: new FormControl<boolean>(true),
+    [HeaderControlName.SHOW_UNKNOWN]: new FormControl<boolean>(false),
+    [HeaderControlName.SHOW_SPOILERS]: new FormControl<boolean>(false),
+    [HeaderControlName.SEARCH_TERM]: new FormControl<string>('')
   });
   stickyMonstie: Monstie | null = null;
 
   get showOwnedControl(): FormControl<boolean> {
-    return this.filterForm.get('showOwned') as FormControl<boolean>;
+    return this.filterForm.get(HeaderControlName.SHOW_OWNED) as FormControl<boolean>;
   }
 
   get showSeenControl(): FormControl<boolean> {
-    return this.filterForm.get('showSeen') as FormControl<boolean>;
+    return this.filterForm.get(HeaderControlName.SHOW_SEEN) as FormControl<boolean>;
   }
 
   get showUnknownControl(): FormControl<boolean> {
-    return this.filterForm.get('showUnknown') as FormControl<boolean>;
+    return this.filterForm.get(HeaderControlName.SHOW_UNKNOWN) as FormControl<boolean>;
   }
 
   get showSpoilersControl(): FormControl<boolean> {
-    return this.filterForm.get('showSpoilers') as FormControl<boolean>;
+    return this.filterForm.get(HeaderControlName.SHOW_SPOILERS) as FormControl<boolean>;
   }
 
   get searchTermControl(): FormControl<string> {
-    return this.filterForm.get('searchTerm') as FormControl<string>;
+    return this.filterForm.get(HeaderControlName.SEARCH_TERM) as FormControl<string>;
   }
 
   elementList: MonstieElement[] = Object.values(MonstieElement);
@@ -72,11 +80,22 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
   monstieAilmentIconMap = monstieAilmentIconMap;
   monstieStrengthIconMap = monstieStrengthIconMap;
 
+  // TODO: Persist header control values in local storage
+  // Save monsties into local storage
+  // Create a dropdown with typeahead (but no values by default), by monstie name
+  // Dropdown elements contain a "owned" and "seen" button to update storage save with that value for that monstie
+  // Dropdown requires exact match (minus whitespace, ignoring case) if spoilers are turned off
+  // Perhaps a lil modal when you click a monster in spoilers mode to update status as well
+  // Figure out better colors
+  // Add feral variants, as their own listings and not sub values in the existing model
+  // Add toggles for showing/hiding feral, and if enabled, showing only ferals
+  // Add first time viewing pop up modal explaining stuff
+  // Add a (?) on the header to show that again
+
+  // Maybe eventually allow saving of seen element or ailment values
+
   ngOnInit(): void {
     this.monstiesFromSave = this.monstieService.getStories3Monsties(stories3save1);
-    // this.allMonsties = defaultMonsties;
-
-    // Set up subscription for reactive updates
     this.subscriptions.add(this.filterForm.valueChanges.subscribe(() => this.updateMonsties()));
 
     this.updateMonsties();
@@ -88,24 +107,53 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
 
   updateMonsties(): void {
     const formValue = this.filterForm.value;
-    const searchTerm: string = formValue.searchTerm || '';
-    const showOwned: boolean = formValue.showOwned ?? true;
-    const showSeen: boolean = formValue.showSeen ?? true;
-    const showUnknown: boolean = formValue.showUnknown ?? false;
-
+    const searchTerm: string = formValue.searchTerm?.trim() || '';
+    // const searchTerms: string[] = fromValue.searchTerm.split(',');
+    // this.monstiesFromSave.filter searchTerms.some(// filter logic)
     // Filter by search term
     const filteredMonsties: Monstie[] = this.monstiesFromSave.filter((monstie: Monstie): boolean => {
-      const nameMatches: boolean = monstie.name.toLowerCase().includes(searchTerm.toLowerCase());
-      const genusMatches: boolean = monstie.genus.toLowerCase().includes(searchTerm.toLowerCase());
-      const typeMatches: boolean = monstie.type.toLowerCase().includes(searchTerm.toLowerCase());
-      const elementMatches: boolean = monstie.elements.some((element: string): boolean =>
-        element.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      return nameMatches || genusMatches || typeMatches || elementMatches;
+      if (!searchTerm?.length) {
+        return true;
+      }
+      if (searchTerm.includes('+')) {
+        return searchTerm.split('+')?.every(term => this.filterMonstie(monstie, term, true));
+      } else {
+        return searchTerm.split(',')?.some(term => this.filterMonstie(monstie, term, false));
+      }
     });
 
     // Sort the filtered list
-    this.monsties = this.sortTableMonsties(filteredMonsties, showOwned, showSeen, showUnknown);
+    this.monsties = this.sortTableMonsties(
+      filteredMonsties,
+      formValue.showOwned ?? true,
+      formValue.showSeen ?? true,
+      formValue.showUnknown ?? false
+    );
+
+    if (this.stickyMonstie) {
+      const foundSticky = this.monsties.find(m => m.name === this.stickyMonstie?.name);
+      if (!foundSticky) {
+        this.clearSticky();
+      }
+    }
+  }
+
+  filterMonstie(monstie: Monstie, searchTerm: string, defaultWhenEmpty: boolean): boolean {
+    const trimmedTerm: string = searchTerm.trim();
+    if (!trimmedTerm.length) {
+      return defaultWhenEmpty;
+    } else if (!isNaN(parseInt(trimmedTerm.replace(/ /g, '')))) {
+      return [...trimmedTerm.replace(/ /g, '')].map(char => parseInt(char, 10)).includes(monstie.star);
+    } else {
+      const nameMatches: boolean = monstie.name.toLowerCase().includes(trimmedTerm.toLowerCase());
+      const genusMatches: boolean = monstie.genus.toLowerCase().includes(trimmedTerm.toLowerCase());
+      const typeMatches: boolean = monstie.type.toLowerCase().includes(trimmedTerm.toLowerCase());
+      const starMatches: boolean = parseInt(trimmedTerm) === monstie.star;
+      const elementMatches: boolean = monstie.elements.some((element: string): boolean =>
+        element.toLowerCase().includes(trimmedTerm.toLowerCase())
+      );
+      return nameMatches || genusMatches || typeMatches || elementMatches || starMatches;
+    }
   }
 
   sortTableMonsties(monsties: Monstie[], showOwned: boolean, showSeen: boolean, showUnknown: boolean): Monstie[] {
@@ -137,6 +185,7 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
   clearSticky(): void {
     // console.log('clearSticky');
     this.stickyMonstie = null;
+    //this.searchTermControl.setValue('');
   }
 
   updateCanDisplay(monsties: Monstie[], showOwned: boolean, showSeen: boolean, showUnknown: boolean): Monstie[] {

@@ -1,4 +1,4 @@
-import { Monstie, MonstieType, MonstieGenus, MonstieElement, MonstieAilment, MonstieStrength, Stories3Location } from './monstie.model';
+import { Monstie, MonstieType, MonstieGenus, MonstieElement, MonstieAilment, MonstieStrength, Stories3Location, MonstieSkill } from './monstie.model';
 
 export enum Stories3MonstieName {
   VELOCIDROME = 'Velocidrome',
@@ -176,7 +176,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 2,
     location: 'Sunpetal Plains, Mirror Lake',
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 3,
       Attack: 4,
@@ -213,7 +213,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 3,
     location: [Stories3Location.BROADLEAF_BASIN, Stories3Location.BLIGHTSTONE_WOODS],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 4,
       Attack: 5,
@@ -250,7 +250,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 2,
     location: [Stories3Location.SUNPETAL_PLAINS, Stories3Location.BLIGHTSTONE_WOODS],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 5,
       Attack: 4,
@@ -287,7 +287,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: [Stories3Location.BROADLEAF_BASIN],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 5,
       Attack: 5,
@@ -324,7 +324,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 3,
     location: [Stories3Location.CANALTA, Stories3Location.HOWLINYOWL_FOREST],
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.PUKEI_PUKEI,
@@ -335,7 +335,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: [Stories3Location.CATARACTS, Stories3Location.HOWLINYOWL_FOREST],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 5,
       Attack: 4,
@@ -366,12 +366,13 @@ export const stories3Monsties: Monstie[] = [
   {
     name: Stories3MonstieName.YIAN_GARUGA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/a/a1/MHST3-Yian_Garuga_Icon.png',
-    type: MonstieType.SPEED,
+    type: MonstieType.TECH,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.BIRD_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 4,
     location: [Stories3Location.CANALTA, Stories3Location.HOWLINYOWL_FOREST],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 0,
       Attack: 0,
@@ -382,20 +383,20 @@ export const stories3Monsties: Monstie[] = [
       StaminaBase: 0
     },
     ailmentRes: {
-      [MonstieAilment.POISON]: MonstieStrength.NEUTRAL,
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
       [MonstieAilment.BURN]: MonstieStrength.INEFFECTIVE,
-      [MonstieAilment.PARALYSIS]: MonstieStrength.NEUTRAL,
-      [MonstieAilment.SLEEP]: MonstieStrength.NEUTRAL,
-      [MonstieAilment.BOMB]: MonstieStrength.NEUTRAL,
-      [MonstieAilment.BLEED]: MonstieStrength.NEUTRAL,
-      [MonstieAilment.BLIND]: MonstieStrength.NEUTRAL
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
     },
     elementRes: {
       [MonstieElement.NON]: MonstieStrength.NEUTRAL,
-      [MonstieElement.FIRE]: MonstieStrength.VERY_INEFFECTIVE,
-      [MonstieElement.WATER]: MonstieStrength.VERY_EFFECTIVE,
-      [MonstieElement.THUNDER]: MonstieStrength.NEUTRAL,
-      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
       [MonstieElement.DRAGON]: MonstieStrength.NEUTRAL
     }
   },
@@ -407,7 +408,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 7,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.ARZUROS,
@@ -453,7 +454,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: 'Howlinyowl Forest, Blessing Hill',
-    skills: ['Fly', 'Wall Climb']
+    skills: [MonstieSkill.FLY, MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.BLOOD_ORANGE_BISHATEN,
@@ -463,7 +464,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 4,
     location: 'Bountiful Dunes',
-    skills: ['Fly', 'Wall Climb']
+    skills: [MonstieSkill.FLY, MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.BLANGONGA,
@@ -473,7 +474,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 3,
     location: 'Glacial Caps',
-    skills: ['Wall Climb', 'Breath']
+    skills: [MonstieSkill.WALL_CLIMB, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.GARANGOLM,
@@ -483,7 +484,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 4,
     location: "Mt. Canalta, Colossal Dragon's Remains",
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.AJARAKAN,
@@ -493,7 +494,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Bountiful Dunes',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.GOSS_HARAG,
@@ -503,7 +504,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 5,
     location: 'Old Capital Road',
-    skills: ['Breath']
+    skills: [MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.CANYNE,
@@ -513,7 +514,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: 'Blessing Hill',
-    skills: ['Wall Climb', 'Ground Dive']
+    skills: [MonstieSkill.WALL_CLIMB, MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.CHATACABRA,
@@ -560,7 +561,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 3,
     location: [Stories3Location.CATARACTS, Stories3Location.FROZEN_GROTTO],
-    skills: ['Breath'],
+    skills: [MonstieSkill.BREATH],
     stats: {
       Health: 7,
       Attack: 7,
@@ -596,7 +597,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 3,
     location: "Colossal Dragon's Remains",
-    skills: ['Breath', 'Ground Dive']
+    skills: [MonstieSkill.BREATH, MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.NERSCYLLA,
@@ -607,7 +608,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: [Stories3Location.SUNPETAL_PLAINS],
-    skills: ['Wall Climb'],
+    skills: [MonstieSkill.WALL_CLIMB],
     stats: {
       Health: 4,
       Attack: 4,
@@ -643,7 +644,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 4,
     location: 'Rococo Rocks',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.RAKNA_KADAKI,
@@ -662,7 +663,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: "Colossal Dragon's Remains",
-    skills: ['Ground Dive']
+    skills: [MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.JADE_BARROTH,
@@ -672,7 +673,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 4,
     location: 'Old Capital Road',
-    skills: ['Ground Dive']
+    skills: [MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.ANJANATH,
@@ -683,7 +684,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 4,
     location: [Stories3Location.BROADLEAF_BASIN],
-    skills: ['Breath'],
+    skills: [MonstieSkill.BREATH],
     stats: {
       Health: 6,
       Attack: 7,
@@ -719,7 +720,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 5,
     location: 'Old Capital Road',
-    skills: ['Breath']
+    skills: [MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.GLAVENUS,
@@ -729,7 +730,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Rococo Rocks',
-    skills: ['Breath']
+    skills: [MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.HELLBLADE_GLAVENUS,
@@ -739,7 +740,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 7,
     location: 'Mutation',
-    skills: ['Breath']
+    skills: [MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.BRACHYDIOS,
@@ -758,7 +759,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.DRAGON],
     star: 7,
     location: 'Sacrosanctum/Lazlion',
-    skills: ['Breath']
+    skills: [MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.PLESIOTH,
@@ -769,7 +770,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 4,
     location: [Stories3Location.MIRROR_LAKE],
-    skills: ['Swim', 'Breath'],
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
     stats: {
       Health: 6,
       Attack: 6,
@@ -806,7 +807,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 5,
     location: [Stories3Location.MIRROR_LAKE, Stories3Location.BOUNTIFUL_DUNES],
-    skills: ['Swim', 'Breath'],
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
     stats: {
       Health: 7,
       Attack: 7,
@@ -843,7 +844,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 2,
     location: [Stories3Location.SUNPETAL_PLAINS, Stories3Location.MIRROR_LAKE],
-    skills: ['Swim', 'Breath'],
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
     stats: {
       Health: 4,
       Attack: 5,
@@ -880,7 +881,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 3,
     location: [Stories3Location.CATARACTS, Stories3Location.BLESSING_HILL],
-    skills: ['Swim', 'Breath'],
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
     stats: {
       Health: 5,
       Attack: 6,
@@ -917,7 +918,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 4,
     location: [Stories3Location.CATARACTS, Stories3Location.FROZEN_GROTTO],
-    skills: ['Swim', 'Breath'],
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
     stats: {
       Health: 6,
       Attack: 5,
@@ -953,17 +954,61 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 5,
     location: 'Mt. Canalta, Frozen Grotto',
-    skills: ['Swim', 'Breath']
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
+        ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.NEUTRAL
+    }
   },
   {
     name: Stories3MonstieName.LAGIACRUS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8e/MHST3-Lagiacrus_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.SPEED,
     genus: MonstieGenus.LEVIATHAN,
     elements: [MonstieElement.THUNDER],
     star: 5,
     location: 'Endangered Den (Mirror Lake)',
-    skills: ['Swim', 'Breath']
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH],
+        stats: {
+      Health: 6,
+      Attack: 7,
+      Speed: 6,
+      Defense: 7,
+      Crit: 0,
+      StaminaBase: 7,
+      StaminaRegen: 7
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.NEUTRAL,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.ICE]: MonstieStrength.NEUTRAL,
+      [MonstieElement.DRAGON]: MonstieStrength.EFFECTIVE
+    }
   },
   {
     name: Stories3MonstieName.IVORY_LAGIACRUS,
@@ -973,7 +1018,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 6,
     location: 'Mutation',
-    skills: ['Swim', 'Breath']
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.MIZUTSUNE,
@@ -983,7 +1028,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 5,
     location: 'Endangered Den (Frozen Grotto)',
-    skills: ['Swim', 'Breath']
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.SOULSEER_MIZUTSUNE,
@@ -993,7 +1038,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 7,
     location: 'Mutation',
-    skills: ['Swim', 'Breath']
+    skills: [MonstieSkill.SWIM, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.ALMUDRON,
@@ -1003,7 +1048,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 5,
     location: "Colossal Dragon's Remains",
-    skills: ['Swim', 'Ground Dive']
+    skills: [MonstieSkill.SWIM, MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.TOBI_KADACHI,
@@ -1014,7 +1059,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 3,
     location: ['Broadleaf Basin'],
-    skills: ['Fly', 'Wall Climb'],
+    skills: [MonstieSkill.FLY, MonstieSkill.WALL_CLIMB],
     stats: {
       Health: 4,
       Attack: 6,
@@ -1050,7 +1095,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: "Death's Maw",
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.EBONY_ODOGARON,
@@ -1060,7 +1105,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.DRAGON],
     star: 6,
     location: 'Sacrosanctum/Lazlion',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.ZINOGRE,
@@ -1070,7 +1115,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 5,
     location: 'Endangered Den (Rococo Rocks)',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.STYGIAN_ZINOGRE,
@@ -1080,7 +1125,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.DRAGON],
     star: 6,
     location: 'Mutation',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.THUNDERLORD_ZINOGRE,
@@ -1090,7 +1135,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 7,
     location: 'Mutation',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.LUNAGARON,
@@ -1100,7 +1145,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 5,
     location: 'Old Capital Road',
-    skills: ['Wall Climb', 'Breath']
+    skills: [MonstieSkill.WALL_CLIMB, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.MAGNAMALO,
@@ -1111,7 +1156,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 6,
     location: [Stories3Location.OLD_CAPITAL_ROAD],
-    skills: ['Wall Climb'],
+    skills: [MonstieSkill.WALL_CLIMB],
     stats: {
       Health: 7,
       Attack: 8,
@@ -1148,7 +1193,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 3,
     location: [Stories3Location.BLIGHTSTONE_WOODS],
-    skills: ['Fly'],
+    skills: [MonstieSkill.FLY],
     stats: {
       Health: 5,
       Attack: 3,
@@ -1184,17 +1229,18 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 3,
     location: 'Frozen Grotto',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.RED_KHEZU,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/6/60/MHST3-Red_Khezu_Icon.png',
     type: MonstieType.TECH,
+    enragedType: MonstieType.POWER,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.THUNDER],
     star: 4,
     location: 'Frozen Grotto, Glacial Caps',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.RATHIAN,
@@ -1205,7 +1251,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 4,
     location: [Stories3Location.SUNPETAL_PLAINS],
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 5,
       Attack: 6,
@@ -1242,7 +1288,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Mutation',
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 6,
       Attack: 7,
@@ -1278,7 +1324,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 7,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.LEGIANA,
@@ -1288,7 +1334,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 4,
     location: 'Glacial Caps',
-    skills: ['Fly']
+    skills: [MonstieSkill.FLY]
   },
   {
     name: Stories3MonstieName.BARIOTH,
@@ -1298,7 +1344,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 4,
     location: 'Endangered Den (Glacial Caps)',
-    skills: ['Fly', 'Wall Climb', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.WALL_CLIMB, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.SAND_BARIOTH,
@@ -1308,7 +1354,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: 'Mutation',
-    skills: ['Fly', 'Wall Climb', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.WALL_CLIMB, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.NARGACUGA,
@@ -1318,7 +1364,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 4,
     location: 'Endangered Den (Blessing Hill)',
-    skills: ['Wall Climb', 'Stealth']
+    skills: [MonstieSkill.WALL_CLIMB, 'Stealth']
   },
   {
     name: Stories3MonstieName.GREEN_NARGACUGA,
@@ -1328,7 +1374,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: 'Mutation',
-    skills: ['Wall Climb', 'Stealth']
+    skills: [MonstieSkill.WALL_CLIMB, 'Stealth']
   },
   {
     name: Stories3MonstieName.SILVERWIND_NARGACUGA,
@@ -1338,7 +1384,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 7,
     location: 'Mutation',
-    skills: ['Wall Climb', 'Stealth']
+    skills: [MonstieSkill.WALL_CLIMB, 'Stealth']
   },
   {
     name: Stories3MonstieName.ASTALOS,
@@ -1348,7 +1394,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 5,
     location: 'Endangered Den (Mirror Lake)',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.BOLTREAVER_ASTALOS,
@@ -1358,7 +1404,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 7,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.RATHA,
@@ -1368,7 +1414,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Always in party',
-    skills: ['Fly', 'Breath'],
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
     stats: {
       Health: 7,
       Attack: 7,
@@ -1387,7 +1433,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Sacrosanctum/Lazlion',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.AZURE_RATHALOS,
@@ -1397,7 +1443,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 6,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.DREADKING_RATHALOS,
@@ -1407,7 +1453,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 7,
     location: 'Mutation',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.TIGREX,
@@ -1417,7 +1463,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: "Endangered Den (Colossal Dragon's Remains)",
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.BRUTE_TIGREX,
@@ -1427,7 +1473,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 6,
     location: 'Mutation',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.GRIMCLAW_TIGREX,
@@ -1437,7 +1483,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 7,
     location: 'Mutation',
-    skills: ['Wall Climb']
+    skills: [MonstieSkill.WALL_CLIMB]
   },
   {
     name: Stories3MonstieName.GRAVIOS,
@@ -1447,7 +1493,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 5,
     location: 'Rococo Rocks',
-    skills: ['Fly', 'Breath', 'Ground Dive']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH, MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.BLACK_GRAVIOS,
@@ -1457,7 +1503,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.FIRE],
     star: 6,
     location: "Bountiful Dunes, Death's Maw",
-    skills: ['Fly', 'Breath', 'Ground Dive']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH, MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.DIABLOS,
@@ -1467,7 +1513,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 5,
     location: 'Rococo Rocks',
-    skills: ['Ground Dive']
+    skills: [MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.BLACK_DIABLOS,
@@ -1477,7 +1523,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 6,
     location: "Rococo Rocks, Death's Maw",
-    skills: ['Ground Dive']
+    skills: [MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.BLOODBATH_DIABLOS,
@@ -1487,7 +1533,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 7,
     location: 'Mutation',
-    skills: ['Ground Dive']
+    skills: [MonstieSkill.GROUND_DIVE]
   },
   {
     name: Stories3MonstieName.SEREGIOS,
@@ -1497,17 +1543,18 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.NON],
     star: 6,
     location: 'Mt. Canalta',
-    skills: ['Fly']
+    skills: [MonstieSkill.FLY]
   },
   {
     name: Stories3MonstieName.ESPINAS,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/27/MHST3-Espinas_Icon.png',
     type: MonstieType.POWER,
+    enragedType: MonstieType.SPEED,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.FIRE],
     star: 6,
     location: 'Bountiful Dunes',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.REY_DAU,
@@ -1517,7 +1564,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.THUNDER],
     star: 6,
     location: "Death's Maw",
-    skills: ['Fly']
+    skills: [MonstieSkill.FLY]
   },
   {
     name: Stories3MonstieName.ARKVELD,
@@ -1527,7 +1574,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.DRAGON],
     star: 6,
     location: 'Sacrosanctum/Lazlion',
-    skills: ['Fly']
+    skills: [MonstieSkill.FLY]
   },
   {
     name: Stories3MonstieName.NAMIELLE,
@@ -1537,7 +1584,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.WATER],
     star: 7,
     location: 'Mirror Lake',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.VELKHANA,
@@ -1547,7 +1594,7 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.ICE],
     star: 7,
     location: 'Glacial Caps',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   },
   {
     name: Stories3MonstieName.MALZENO,
@@ -1557,6 +1604,6 @@ export const stories3Monsties: Monstie[] = [
     elements: [MonstieElement.DRAGON],
     star: 7,
     location: 'Sacrosanctum/Lazlion',
-    skills: ['Fly', 'Breath']
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
   }
 ];

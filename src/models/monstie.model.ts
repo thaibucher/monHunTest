@@ -7,7 +7,7 @@ export interface Monstie {
   type: MonstieType;
   enragedType?: MonstieType;
   genus: MonstieGenus;
-  star?: number;
+  star: number;
   skills?: string[];
   number?: number;
   owned?: boolean;
@@ -75,6 +75,14 @@ export enum MonstieStrength {
   NEUTRAL = 'Neutral',
   EFFECTIVE = 'Effective',
   VERY_EFFECTIVE = 'Very Effective'
+}
+
+export enum MonstieSkill {
+  FLY = 'Fly',
+  SWIM = 'Swim',
+  BREATH = 'Breath',
+  GROUND_DIVE = 'Ground Dive',
+  WALL_CLIMB = 'Wall Climb',
 }
 
 export interface MonstieAilmentRes {

@@ -228,7 +228,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GREAT_BAGGI,
@@ -237,7 +238,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GYPCEROS,
@@ -246,7 +248,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.IODROME,
@@ -255,7 +258,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GENDROME,
@@ -264,7 +268,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PURPLE_GYPCEROS,
@@ -273,7 +278,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.CRIMSON_QURUPECO,
@@ -282,7 +288,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BIRD_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_NORMAL,
@@ -291,7 +298,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_FIRE,
@@ -300,7 +308,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_WATER,
@@ -309,7 +318,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_THUNDER,
@@ -318,7 +328,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_ICE,
@@ -327,7 +338,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PALAMUTE_DRAGON,
@@ -336,7 +348,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.TIGREX,
@@ -345,7 +358,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.MONOBLOS,
@@ -354,7 +368,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
 
   {
@@ -364,7 +379,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.NARGACUGA,
@@ -373,7 +389,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RATHIAN,
@@ -382,7 +399,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.POPO,
@@ -391,7 +409,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.HERBIVORE,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.CONGALALA,
@@ -400,7 +419,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.KECHA_WACHA,
@@ -409,7 +429,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.ZAMTRIOS,
@@ -418,7 +439,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.AMPHIBIAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.NERSCYLLA,
@@ -427,7 +449,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.TEMNOCERAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BARROTH,
@@ -436,7 +459,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.TOBI_KADACHI,
@@ -445,7 +469,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.KHEZU,
@@ -454,7 +479,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RED_KHEZU,
@@ -463,7 +489,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.LAGOMBI,
@@ -472,7 +499,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.JADE_BARROTH,
@@ -481,7 +509,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.ANJANATH,
@@ -490,7 +519,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GAMMOTH,
@@ -499,7 +529,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.ZINOGRE,
@@ -508,7 +539,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BARIOTH,
@@ -517,7 +549,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.LEGIANA,
@@ -526,7 +559,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.CEPHADROME,
@@ -535,7 +569,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.PISCINE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.ASH_KECHA_WACHA,
@@ -543,9 +578,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.FANGED_BEAST,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.GREEN_NARGACUGA,
@@ -553,9 +589,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.DIABLOS,
@@ -563,9 +600,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.BLACK_DIABLOS,
@@ -573,9 +611,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.WHITE_MONOBLOS,
@@ -583,9 +622,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.FLYING_WYVERN,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.MIZUTSUNE,
@@ -593,9 +633,10 @@ export const stories2Monsties: Monstie[] = [
     type: MonstieType.UNKNOWN,
     genus: MonstieGenus.LEVIATHAN,
     elements: [MonstieElement.NON]
-
     // number: undefined,
     // star: undefined,
+    ,
+    star: 0
   },
   {
     name: Stories2MonstieNames.LAGIACRUS,
@@ -604,7 +645,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.URAGAAN,
@@ -613,7 +655,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BRUTE_TIGREX,
@@ -622,7 +665,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PURPLE_LUDROTH,
@@ -631,7 +675,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RUBY_BASARIOS,
@@ -640,7 +685,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GRAVIOS,
@@ -649,7 +695,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.SHROUDED_NERSCYLLA,
@@ -658,7 +705,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.TEMNOCERAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.EMERALD_CONGALALA,
@@ -667,7 +715,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_BEAST,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BLACK_GRAVIOS,
@@ -676,7 +725,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.IVORY_LAGIACRUS,
@@ -685,7 +735,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.LEVIATHAN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BRACHYDIOS,
@@ -694,14 +745,16 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.NERGIGANTE,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/ef/MHST2-Nergigante_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.ASTALOS,
@@ -710,7 +763,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GLAVENUS,
@@ -719,7 +773,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BAZELGEUSE,
@@ -728,7 +783,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.UNKNOWN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.SAND_BARIOTH,
@@ -737,7 +793,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.DEVILJHO,
@@ -746,7 +803,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.UNKNOWN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.STYGIAN_ZINOGRE,
@@ -755,7 +813,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.SEREGIOS,
@@ -764,7 +823,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RATHALOS,
@@ -773,7 +833,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.AZURE_RATHALOS,
@@ -782,7 +843,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.PINK_RATHIAN,
@@ -791,7 +853,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.FULGUR_ANJANATH,
@@ -800,7 +863,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.BRUTE_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.SILVERWIND_NARGACUGA,
@@ -809,7 +873,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.THUNDERLORD_ZINOGRE,
@@ -818,7 +883,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FANGED_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.BLOODBATH_DIABLOS,
@@ -827,7 +893,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.GRIMCLAW_TIGREX,
@@ -836,7 +903,8 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.DREADQUEEN_RATHIAN,
@@ -845,42 +913,48 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.KIRIN,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/e/ea/MHST2-Kirin_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.TEOSTRA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/5/5f/MHST2-Teostra_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RAJANG,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/9/90/MHST2-Rajang_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.KUSHALA_DAORA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/2/2b/MHST2-Kushala_Daora_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.VELKHANA,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/8/8b/MHST2-Velkhana_Egg.svg',
     type: MonstieType.POWER,
     genus: MonstieGenus.UNKNOWN,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   },
   {
     name: Stories2MonstieNames.RAZEWING_RATHA,
@@ -889,6 +963,7 @@ export const stories2Monsties: Monstie[] = [
     genus: MonstieGenus.FLYING_WYVERN,
     // number: undefined,
     // star: undefined,
-        elements: [MonstieElement.NON]
+    elements: [MonstieElement.NON],
+    star: 0
   }
 ];
