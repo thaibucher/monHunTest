@@ -115,10 +115,10 @@ export class MonstieTableComponent implements OnInit, OnDestroy {
       if (!searchTerm?.length) {
         return true;
       }
-      if (searchTerm.includes('+')) {
-        return searchTerm.split('+')?.every(term => this.filterMonstie(monstie, term, true));
+      if (searchTerm.match(/[\+\&]/g)) {
+        return searchTerm.split(/[\+\&]/g)?.every(term => this.filterMonstie(monstie, term, true));
       } else {
-        return searchTerm.split(',')?.some(term => this.filterMonstie(monstie, term, false));
+        return searchTerm.split(/[\,\|]/g)?.some(term => this.filterMonstie(monstie, term, false));
       }
     });
 
