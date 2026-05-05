@@ -1,27 +1,26 @@
-# MonHunTest
+# MonstieDex
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+TODO: 
+Persist header control values in local storage
 
-## Development server
+Save monsties into local storage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Create a dropdown with typeahead (but no values by default), by monstie name
 
-## Code scaffolding
+Dropdown elements contain a "owned" and "seen" button to update storage save with that value for that monstie
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dropdown requires exact match (minus whitespace, ignoring case) if spoilers are turned off
 
-## Build
+Perhaps a lil modal when you click a monster in spoilers mode to update status as well
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Figure out better colors
 
-## Running unit tests
+Add feral variants, as their own listings and not sub values in the existing model
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Add toggles for showing/hiding feral, and if enabled, showing only ferals
 
-## Running end-to-end tests
+Add first time viewing pop up modal explaining stuff
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Add a (?) on the header to show that again
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Maybe eventually allow saving of seen element or ailment values

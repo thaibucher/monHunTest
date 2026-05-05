@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build -- --configuration production --base-href /monHunTest/
+        run: npm run build -- --configuration production --base-href /MonstieDex/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/monHunTest'   # Match your outputPath (usually dist/<project-name> or dist/<project-name>/browser in newer Angular)
+          path: './dist/MonstieDex'   # Match your outputPath (usually dist/<project-name> or dist/<project-name>/browser in newer Angular)
 
   deploy:
     needs: build
