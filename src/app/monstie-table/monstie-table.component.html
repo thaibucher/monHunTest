@@ -40,7 +40,7 @@
         </div>
         <div class="sticky-type-icons">
           <img [src]="monstieTypeIconMap[stickyMonstie.type]" class="type-icon type-icon-medium" />
-          @if (stickyMonstie?.enragedType) {
+          @if (stickyMonstie.enragedType) {
             <img
               [src]="monstieTypeIconMap[stickyMonstie.enragedType || MonstieType.UNKNOWN]"
               class="type-icon type-icon-medium type-icon-enraged"
@@ -62,10 +62,10 @@
               <tr>
                 @for (ele of elementList; track ele) {
                   <td>
-                    @if (stickyMonstie?.elementRes?.[ele]; as strength) {
+                    @if (stickyMonstie.elementRes?.[ele]; as strength) {
                       <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
                     }
-                    @if (!stickyMonstie?.elementRes?.[ele]; as strength) {
+                    @if (!stickyMonstie.elementRes?.[ele]; as strength) {
                       <img src="assets/unknown.png" class="strength-icon" />
                     }
                   </td>
@@ -89,10 +89,10 @@
               <tr>
                 @for (ailment of ailmentList; track ailment) {
                   <td>
-                    @if (stickyMonstie?.ailmentRes?.[ailment]; as strength) {
+                    @if (stickyMonstie.ailmentRes?.[ailment]; as strength) {
                       <img [src]="monstieStrengthIconMap[strength]" class="strength-icon" />
                     }
-                    @if (!stickyMonstie?.ailmentRes?.[ailment]; as strength) {
+                    @if (!stickyMonstie.ailmentRes?.[ailment]; as strength) {
                       <img src="assets/unknown.png" class="strength-icon" />
                     }
                   </td>

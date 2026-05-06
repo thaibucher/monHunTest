@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
@@ -14,7 +14,11 @@ import {
   monstieStrengthIconMap,
   monstieGenusSortMap
 } from '../../models/asset-map.model';
-import { stories3save1 } from '../../models/saves.model';
+import { combineLatestWith, startWith } from 'rxjs/operators';
+import { Store } from '@ngxs/store';
+import { MonstieDexState } from '../../store/monstie-dex/monstie-dex.state';
+import { Stories3MonstieName } from '../../models/monstie-list.stories3.model';
+import { LoadFromDefaultModel } from '../../store/monstie-dex/monstie-dex.actions';
 
 export enum HeaderControlName {
   SHOW_OWNED = 'showOwned',
@@ -37,7 +41,9 @@ export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private readonly monstieService: MonstieService,
-    private readonly ngbModal: NgbModal
+    private readonly ngbModal: NgbModal,
+    private readonly store: Store,
+    private readonly cdr: ChangeDetectorRef
   ) {}
   MonstieStatus = MonstieStatus;
   MonstieElement = MonstieElement;
@@ -90,30 +96,44 @@ export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
   monstieStrengthIconMap = monstieStrengthIconMap;
 
   ngOnInit(): void {
-    this.monstiesFromSave = this.monstieService.getStories3Monsties(stories3save1);
-    this.subscriptions.add(this.filterForm.valueChanges.subscribe({ next: () => this.updateMonsties() }));
-
-    this.updateMonsties();
+    this.store.dispatch(LoadFromDefaultModel);
+    this.subscriptions.add(
+      this.store
+        .select(MonstieDexState.getMonstieStatuses)
+        .pipe(combineLatestWith(this.filterForm.valueChanges.pipe(startWith(this.filterForm.getRawValue()))))
+        .subscribe({
+          next: ([monstieStatusMap, valueChanges]) => {
+            console.log(monstieStatusMap, valueChanges);
+            this.updateMonsties(monstieStatusMap);
+            this.cdr.markForCheck();
+          }
+        })
+    );
   }
 
   ngAfterViewInit(): void {
-    this.ngbModal.open(this.introModal, {
-      centered: true,
-      backdrop: 'static',
-      keyboard: true
-    });
+    const showModal: boolean = this.store.selectSnapshot(MonstieDexState.getShowIntroModal);
+    if (showModal) {
+      this.ngbModal.open(this.introModal, {
+        centered: true,
+        backdrop: 'static',
+        keyboard: true
+      });
+    }
   }
 
   ngOnDestroy(): void {
     this.subscriptions.unsubscribe();
   }
 
-  updateMonsties(): void {
+  updateMonsties(monstieStatuses: Partial<Record<Stories3MonstieName, MonstieStatus>>): void {
+    if (!monstieStatuses) {
+      return;
+    }
+    this.monstiesFromSave = this.monstieService.getStories3Monsties(monstieStatuses);
+
     const formValue = this.filterForm.value;
     const searchTerm: string = formValue.searchTerm?.trim() || '';
-    // const searchTerms: string[] = fromValue.searchTerm.split(',');
-    // this.monstiesFromSave.filter searchTerms.some(// filter logic)
-    // Filter by search term
     const filteredMonsties: Monstie[] = this.monstiesFromSave.filter((monstie: Monstie): boolean => {
       if (!searchTerm?.length) {
         return true;
@@ -166,7 +186,7 @@ export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
         const genusOrderA = monstieGenusSortMap.get(a.genus) ?? 0;
         const genusOrderB = monstieGenusSortMap.get(b.genus) ?? 0;
 
-        return genusOrderA - genusOrderB
+        return genusOrderA - genusOrderB;
       }
       // Then by star (high to low)
       return (b.star ?? 0) - (a.star ?? 0);

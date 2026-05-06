@@ -46,7 +46,9 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.BARROTH]: MonstieStatus.OWNED,
   [Stories3MonstieName.SHOGUN_CEANATAUR]:MonstieStatus.OWNED,
   [Stories3MonstieName.ALMUDRON]:MonstieStatus.SEEN,
-  [Stories3MonstieName.AJARAKAN]: MonstieStatus.SEEN
+  [Stories3MonstieName.AJARAKAN]: MonstieStatus.SEEN,
+  [Stories3MonstieName.DIABLOS]: MonstieStatus.SEEN,
+  [Stories3MonstieName.BLOOD_ORANGE_BISHATEN]: MonstieStatus.SEEN
   // [Stories3MonstieName.]
 };
 

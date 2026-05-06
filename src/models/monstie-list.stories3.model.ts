@@ -85,7 +85,8 @@ export enum Stories3MonstieName {
   ARKVELD = 'Arkveld',
   NAMIELLE = 'Namielle',
   VELKHANA = 'Velkhana',
-  MALZENO = 'Malzeno'
+  MALZENO = 'Malzeno',
+  NIBELSNARF = "Nibelsnarf"
 }
 
 export const stories3Monsties: Monstie[] = [
@@ -1632,5 +1633,16 @@ export const stories3Monsties: Monstie[] = [
     star: 7,
     location: 'Sacrosanctum/Lazlion',
     skills: [MonstieSkill.FLY, MonstieSkill.BREATH]
+  },
+    {
+    name: Stories3MonstieName.NIBELSNARF,
+    iconUrl: 'https://monsterhunterwiki.org/images/thumb/9/96/MHST3-Nibelsnarf_Icon.png/80px-MHST3-Nibelsnarf_Icon.png.webp',
+    type: MonstieType.SPEED,
+    genus: MonstieGenus.ELDER_DRAGON,
+    elements: [MonstieElement.DRAGON],
+    star: 7,
+    location: 'Sacrosanctum/Lazlion',
+    skills: [MonstieSkill.FLY, MonstieSkill.BREATH],
+    nonCapturable: true
   }
 ];
