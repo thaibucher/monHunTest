@@ -34,23 +34,25 @@ export const monstieStrengthIconMap: Record<MonstieStrength, string> = {
   [MonstieStrength.VERY_EFFECTIVE]: 'assets/VeryEffective.png'
 };
 
+export const monstieGenusSortMap: Map<MonstieGenus, number> = new Map(Object.values(MonstieGenus).map((value, index) => [value, index]));
 export const monstieGenusColorMap: Record<MonstieGenus, string> = {
+  [MonstieGenus.UNKNOWN]: '#FFFFFF',
   [MonstieGenus.HERBIVORE]: '#A3D977',
-  [MonstieGenus.LEVIATHAN]: '#7DC4E4',
-  [MonstieGenus.AMPHIBIAN]: '#EFA86B',
-  [MonstieGenus.TEMNOCERAN]: '#DDA0DD',
-  [MonstieGenus.BIRD_WYVERN]: '#F5DEB3',
-  [MonstieGenus.FLYING_WYVERN]: '#ADD8E6',
-  [MonstieGenus.BRUTE_WYVERN]: '#90EE90',
-  [MonstieGenus.FANGED_BEAST]: '#FFFFE0',
-  [MonstieGenus.FANGED_WYVERN]: '#DDA0DD',
-  [MonstieGenus.PISCINE_WYVERN]: '#008080',
-  [MonstieGenus.CARAPACEON]: '#A52A2A',
-  [MonstieGenus.ELDER_DRAGON]: '#FFFFFF',
-  [MonstieGenus.NON_CAPTURABLE]: '#FFFFFF',
-  [MonstieGenus.UNKNOWN]: '#FFFFFF'
-};
+  [MonstieGenus.NEOPTERON]: '#FFFFFF',
+  [MonstieGenus.LYNIAN]: '#FFFFFF',
 
+  [MonstieGenus.BIRD_WYVERN]: '#F5DEB3',
+  [MonstieGenus.FANGED_BEAST]: '#FFFFE0',
+  [MonstieGenus.AMPHIBIAN]: '#EFA86B',
+  [MonstieGenus.CARAPACEON]: '#A52A2A',
+  [MonstieGenus.TEMNOCERAN]: '#DDA0DD',
+  [MonstieGenus.BRUTE_WYVERN]: '#90EE90',
+  [MonstieGenus.PISCINE_WYVERN]: '#008080',
+  [MonstieGenus.LEVIATHAN]: '#7DC4E4',
+  [MonstieGenus.FANGED_WYVERN]: '#DDA0DD',
+  [MonstieGenus.FLYING_WYVERN]: '#ADD8E6',
+  [MonstieGenus.ELDER_DRAGON]: '#FFFFFF'
+};
 
 function dullerHex(hex: string, lum: number = 0): string {
   const cleanHex: string = hex.replace(/[^0-9a-f]/gi, '');

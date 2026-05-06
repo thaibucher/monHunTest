@@ -18,6 +18,7 @@ export interface Monstie {
   stats?: MonstieStatTrends;
   location?: string | Array<string | Stories3Location>;
   canDisplay?: boolean;
+  nonCapturable?: boolean;
 }
 
 export enum MonstieStatus {
@@ -46,20 +47,22 @@ export enum MonstieAilment {
 }
 
 export enum MonstieGenus {
-  FANGED_BEAST = 'Fanged Beast',
+  UNKNOWN = 'Unknown',
   HERBIVORE = 'Herbivore',
-  LEVIATHAN = 'Leviathan',
-  AMPHIBIAN = 'Amphibian',
-  TEMNOCERAN = 'Temnoceran',
+  NEOPTERON = 'Neopteron',
+  LYNIAN = 'Lynian',
+
   BIRD_WYVERN = 'Bird Wyvern',
-  FLYING_WYVERN = 'Flying Wyvern',
-  BRUTE_WYVERN = 'Brute Wyvern',
-  FANGED_WYVERN = 'Fanged Wyvern',
-  PISCINE_WYVERN = 'Piscine Wyvern',
+  FANGED_BEAST = 'Fanged Beast',
+  AMPHIBIAN = 'Amphibian',
   CARAPACEON = 'Carapaceon',
-  ELDER_DRAGON = 'Elder Dragon',
-  NON_CAPTURABLE = 'zzzzzzz',
-  UNKNOWN = 'Unknown'
+  TEMNOCERAN = 'Temnoceran',
+  BRUTE_WYVERN = 'Brute Wyvern',
+  PISCINE_WYVERN = 'Piscine Wyvern',
+  LEVIATHAN = 'Leviathan',
+  FANGED_WYVERN = 'Fanged Wyvern',
+  FLYING_WYVERN = 'Flying Wyvern',
+  ELDER_DRAGON = 'Elder Dragon'
 }
 
 export enum MonstieType {
@@ -82,7 +85,7 @@ export enum MonstieSkill {
   SWIM = 'Swim',
   BREATH = 'Breath',
   GROUND_DIVE = 'Ground Dive',
-  WALL_CLIMB = 'Wall Climb',
+  WALL_CLIMB = 'Wall Climb'
 }
 
 export interface MonstieAilmentRes {

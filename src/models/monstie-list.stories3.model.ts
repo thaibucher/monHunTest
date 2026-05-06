@@ -659,11 +659,38 @@ export const stories3Monsties: Monstie[] = [
     name: Stories3MonstieName.BARROTH,
     iconUrl: 'https://static.wikia.nocookie.net/monsterhunter/images/4/44/MHST3-Barroth_Icon.png',
     type: MonstieType.SPEED,
+    enragedType: MonstieType.TECH,
     genus: MonstieGenus.BRUTE_WYVERN,
     elements: [MonstieElement.NON],
     star: 3,
     location: "Colossal Dragon's Remains",
-    skills: [MonstieSkill.GROUND_DIVE]
+    skills: [MonstieSkill.GROUND_DIVE],
+        stats: {
+      Health: 5,
+      Attack: 4,
+      Speed: 6,
+      Defense: 8,
+      Crit: 1,
+      StaminaBase: 7,
+      StaminaRegen: 7
+    },
+    ailmentRes: {
+      [MonstieAilment.POISON]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BURN]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.PARALYSIS]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.SLEEP]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BOMB]: MonstieStrength.EFFECTIVE,
+      [MonstieAilment.BLEED]: MonstieStrength.INEFFECTIVE,
+      [MonstieAilment.BLIND]: MonstieStrength.VERY_EFFECTIVE
+    },
+    elementRes: {
+      [MonstieElement.NON]: MonstieStrength.VERY_INEFFECTIVE,
+      [MonstieElement.FIRE]: MonstieStrength.VERY_EFFECTIVE,
+      [MonstieElement.WATER]: MonstieStrength.INEFFECTIVE,
+      [MonstieElement.THUNDER]: MonstieStrength.NEUTRAL,
+      [MonstieElement.ICE]: MonstieStrength.EFFECTIVE,
+      [MonstieElement.DRAGON]: MonstieStrength.NEUTRAL
+    }
   },
   {
     name: Stories3MonstieName.JADE_BARROTH,

@@ -10,7 +10,7 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.LEGIANA]: MonstieStatus.SEEN,
   [Stories3MonstieName.PAOLUMU]: MonstieStatus.OWNED,
   [Stories3MonstieName.VELOCIDROME]: MonstieStatus.OWNED,
-  [Stories3MonstieName.KULU_YA_KU]: MonstieStatus.SEEN,
+  [Stories3MonstieName.KULU_YA_KU]: MonstieStatus.OWNED,
   [Stories3MonstieName.GYPCEROS]: MonstieStatus.OWNED,
   [Stories3MonstieName.NERSCYLLA]: MonstieStatus.OWNED,
   [Stories3MonstieName.ROYAL_LUDROTH]: MonstieStatus.OWNED,
@@ -43,9 +43,10 @@ export const stories3save1: Partial<Record<Stories3MonstieName, MonstieStatus>> 
   [Stories3MonstieName.KHEZU]: MonstieStatus.OWNED,
   [Stories3MonstieName.IVORY_LAGIACRUS]: MonstieStatus.OWNED,
   [Stories3MonstieName.RED_KHEZU]: MonstieStatus.OWNED,
-  [Stories3MonstieName.BARROTH]: MonstieStatus.SEEN,
-  [Stories3MonstieName.SHOGUN_CEANATAUR]:MonstieStatus.SEEN,
-  [Stories3MonstieName.ALMUDRON]:MonstieStatus.SEEN
+  [Stories3MonstieName.BARROTH]: MonstieStatus.OWNED,
+  [Stories3MonstieName.SHOGUN_CEANATAUR]:MonstieStatus.OWNED,
+  [Stories3MonstieName.ALMUDRON]:MonstieStatus.SEEN,
+  [Stories3MonstieName.AJARAKAN]: MonstieStatus.SEEN
   // [Stories3MonstieName.]
 };
 

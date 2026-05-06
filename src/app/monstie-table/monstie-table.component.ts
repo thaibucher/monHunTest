@@ -2,18 +2,19 @@ import { Component, OnInit, OnDestroy, ViewChild, ElementRef, AfterViewInit } fr
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
+import { NgClass } from '@angular/common';
+import { MonstieStatus, MonstieElement, MonstieAilment, MonstieType, Monstie, MonstieGenus } from '../../models/monstie.model';
+import { MonstieService } from '../../monstie.service';
 import {
-  monstieAilmentIconMap,
-  monstieElementIconMap,
   monstieGenusColorMap,
   monstieGenusColorMapDull,
+  monstieTypeIconMap,
+  monstieElementIconMap,
+  monstieAilmentIconMap,
   monstieStrengthIconMap,
-  monstieTypeIconMap
-} from 'src/models/asset-map.model';
-import { Monstie, MonstieAilment, MonstieElement, MonstieGenus, MonstieStatus, MonstieType } from 'src/models/monstie.model';
-import { stories3save1 } from 'src/models/saves.model';
-import { MonstieService } from 'src/monstie.service';
-import { NgClass } from '@angular/common';
+  monstieGenusSortMap
+} from '../../models/asset-map.model';
+import { stories3save1 } from '../../models/saves.model';
 
 export enum HeaderControlName {
   SHOW_OWNED = 'showOwned',
@@ -162,7 +163,10 @@ export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.updateCanDisplay(monsties, showOwned, showSeen, showUnknown).sort((a: Monstie, b: Monstie): number => {
       // Sort by genus first
       if (a.genus !== b.genus) {
-        return a.genus > b.genus ? -1 : 1;
+        const genusOrderA = monstieGenusSortMap.get(a.genus) ?? 0;
+        const genusOrderB = monstieGenusSortMap.get(b.genus) ?? 0;
+
+        return genusOrderA - genusOrderB
       }
       // Then by star (high to low)
       return (b.star ?? 0) - (a.star ?? 0);
@@ -201,7 +205,7 @@ export class MonstieTableComponent implements OnInit, AfterViewInit, OnDestroy {
   canDisplay(monstie: Monstie, showOwned: boolean, showSeen: boolean, showUnknown: boolean): boolean {
     // console.log('canDisplay', monstie);
 
-    if (monstie.genus === MonstieGenus.NON_CAPTURABLE) {
+    if (monstie.genus === MonstieGenus.UNKNOWN) {
       return true;
     } else {
       return (
